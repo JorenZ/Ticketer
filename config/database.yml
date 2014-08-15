@@ -1,0 +1,22 @@
+base: &base
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  username: ticketer
+  password: Afstand1
+  host: localhost
+  port: 5432
+
+development:
+  <<: *base
+  database: ticketer_development
+
+# Careful: test database is destroyed and re-created for each test
+test:
+  <<: *base
+  database: ticketer_test
+  min_messages: warning
+  
+production:
+  <<: *base
+  database: ticketer
