@@ -1,7 +1,8 @@
 // Place all the styles related to the Tickets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.tickets{
+
+.tickets {
 	table {
 		border-collapse: 	collapse;
 	}
@@ -13,7 +14,7 @@
 
 
 	.list_ticket {
-		width: 					60%;
+		width: 					40%;
 
 		dl {
 			margin: 			0;
@@ -68,7 +69,7 @@
 	}
 
 	.header {
-		text-align: left;
+		text-align: right;
 	}
 
 }

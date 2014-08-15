@@ -1,0 +1,14 @@
+<%if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+
+<% @tickets.each do |ticket| %>
+	<div class="ticket">
+		<h2><%= ticket.topic %></h2>
+		<p><%= sanitize( ticket.body ) %></p>
+		<p><%= ticket.programmer_id %></p>
+	</div>
+<% end %>
+
+
