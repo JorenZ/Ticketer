@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  topic: MyString
-  body: MyString
-  state: MyString
+  topic: Management
+  body: Test-ticket number one for management
+  state: completed
 
 two:
-  topic: MyString
-  body: MyString
-  state: MyString
+  topic: Afsprakenbureau
+  body: Test-ticket number two for afsprakenbureau
+  state: open

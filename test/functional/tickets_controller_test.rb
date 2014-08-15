@@ -3,6 +3,10 @@ require 'test_helper'
 class TicketsControllerTest < ActionController::TestCase
   setup do
     @ticket = tickets(:one)
+    @update = {
+      body: 'Test-ticket',
+      topic: 'Management'
+    }
   end
 
   test "should get index" do
@@ -39,11 +43,4 @@ class TicketsControllerTest < ActionController::TestCase
     assert_redirected_to ticket_path(assigns(:ticket))
   end
 
-  test "should destroy ticket" do
-    assert_difference('Ticket.count', -1) do
-      delete :destroy, id: @ticket
-    end
-
-    assert_redirected_to tickets_path
-  end
 end
