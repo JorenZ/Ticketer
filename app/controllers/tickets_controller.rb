@@ -40,7 +40,7 @@ class TicketsController < ApplicationController
   # POST /tickets
   # POST /tickets.json
   def create
-    @ticket = Ticket.new(params[:ticket])
+    @ticket = Ticket.new( ticket_params )
 
     respond_to do |format|
       if @ticket.save
@@ -86,5 +86,11 @@ def restore
     render :partial => "ticket_actions", :locals => { :ticket => @ticket }
   end
 end
+
+  private
+
+  def ticket_params
+    params.require( :ticket ).permit( :body, :topic )
+  end
 
 end
