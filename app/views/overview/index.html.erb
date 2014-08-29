@@ -2,13 +2,33 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-
-<% @tickets.each do |ticket| %>
-	<div class="ticket">
-		<h2><%= ticket.topic %></h2>
-		<p><%= sanitize( ticket.body ) %></p>
-		<p><%= ticket.programmer_id %></p>
+<div class="table">
+	<div class="thead">
+		<div class="tr">
+				<div class="th medium">Topic</div>
+				<div class="th large">Body</div>
+				<div class="th small">Programmer</div>
+				<div class="th small">Date</div>
+				<div class="th medium">Action</div>
+		</div>
 	</div>
-<% end %>
+	
+	<div class="tbody">
+			<% @tickets.each do |ticket| %>
+					<a class="tr" href="<%= ticket_path( :id => ticket.id ) %>">
+							<div class="td medium"><%= ticket.topic %></div>
+							<div class="td large"><%= sanitize( ticket.body ) %></div>
+							<div class="td number small"><%= ticket.programmer_id %></div>
+							<div class="td number small"><%= ticket.created_at.to_date %></div>
+							<div class="td medium"><%= render :partial => "tickets/ticket_actions", :locals => { :ticket => ticket } %></div>
+					</a>
+			<% end %>
+	</div>
 
+	<!-- <div class="tfoot"> -->
+	<!-- </div> -->
+</div>
 
+<div style="text-align: center;">
+	<%= will_paginate @tickets %>
+</div>

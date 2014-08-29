@@ -69,15 +69,22 @@ class TicketsController < ApplicationController
     end
   end
 
-  # DELETE /tickets/1
-  # DELETE /tickets/1.json
-  def destroy
-    @ticket = Ticket.find(params[:id])
-    @ticket.destroy
+def remove
+  @ticket = Ticket.find( params[:id] )
+  @ticket.update_column( removed: true )
 
-    respond_to do |format|
-      format.html { redirect_to tickets_url }
-      format.json { head :no_content }
-    end
+  respond_to do 
+    render :partial => "ticket_actions", :locals => { :ticket => @ticket }
   end
+end
+
+def restore
+  @ticket = Ticket.find( params[:id] )
+  @ticket.update_column( removed: false )
+
+  respond_to do
+    render :partial => "ticket_actions", :locals => { :ticket => @ticket }
+  end
+end
+
 end

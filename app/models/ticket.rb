@@ -1,14 +1,13 @@
 class Ticket < ActiveRecord::Base
   attr_accessible :body, :state, :topic, :removed, :programmer_id
 
-  validates :topic, :body, presence: true
-  
-def remove
-	update_column( removed: true )
-end
+  validates_presence_of :topic, :body
 
-def restore
-	update_column( removed: false )	
+scope :removed, where( removed: true )  
+scope :not_removed, where( removed: false )
+
+def removed?
+  return self.removed
 end
 
 end

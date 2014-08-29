@@ -13,7 +13,7 @@
       <tr class="<%= cycle( 'list_line_odd', 'list_line_even' ) %>">
 
         <%if ticket.removed %>
-          <td class="list_ticket_removed">
+          <td class="list_ticket removed">
         <% else %>
           <td class="list_ticket">
         <% end %>
@@ -23,7 +23,7 @@
         </td>
 
         <%if ticket.removed %>
-          <td class="list_ticket_removed">
+          <td class="list_ticket removed">
         <% else %>
           <td class="list_ticket">
         <% end %>
@@ -32,15 +32,18 @@
           </dl>
         </td>
 
+        <%if ticket.removed %>
+        <td class="list_actions">
+          <%= render :partial => "tickets/remove_restore_ticket", :locals => { :ticket => ticket } %>
+        </td>
+        <% else %>
         <td class="list_actions">
                 <%= link_to 'Show', ticket %>
           <br/> <%= link_to 'Edit', edit_ticket_path( ticket ) %>
-          <br/> <%if !ticket.removed? %>
-                  <%= button_to 'Remove', ticket, method: :remove, data: { confirm: 'Are you sure?' } %>
-                <% else %>
-                  <%= button_to 'Restore', ticket, method: :restore, data: { confirm: 'Are you sure?' } %>
-                <% end %>
+          <br/> <%= render :partial => "tickets/remove_restore_ticket", :locals => { :ticket => ticket } %>
         </td>
+        <% end %>
+
       </tr>
     <% end %>
   </tbody>

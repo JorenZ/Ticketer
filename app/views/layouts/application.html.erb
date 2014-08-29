@@ -8,27 +8,24 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body class='<%= controller.controller_name %>'>
+<body>
+
 	<div id="banner">
-		<%= @page_title || "Ticketer" %>
+		<%#= image_tag( "logo.png" ) %> <%= @page_title || "Ticketer" %>
+		
+		<div class="nav"><a href="http://localhost:3000/">Overview</a>
+			<a href="http://localhost:3000/tickets/new">New ticket</a></div>
 	</div>
-	<div id="columns">
-		<div id="side">
-		<%= image_tag( "logo.png" ) %>
-		<br/>
-			<ul>
-				<li><a href="http://www....">Overview</a></li>
-				<li><a href="http://www..../new">New ticket</a></li>
-			</ul>
-		</div>
-		<div id="main">
-			<%= yield %>
-		</div>
+
+	<div id="main">
+		<%= yield %>
 	</div>
+	
 	<div id="footer">
 		Page loaded on <%= Time.now.to_date %>, <%= Time.now.strftime( "%H:%M" ) %>
 		<br/> (c) Joren Zandstra <%= Time.now.year %>
 	</div>
+
 </body>
 
 </html>
