@@ -1,0 +1,11 @@
+<div>
+	<% if ticket.removed %>
+		<%= button_to "Remove",
+			:url => { :action => "remove", :id => ticket.id },
+			:update => { :success => "ticket_actions", :failure => "Error" } %>
+	<% else %>
+		<%= button_to "Restore",
+			:url => { :action => "restore", :id => ticket.id },
+			:update => { :success => "ticket_actions", :failure => "Error" } %>
+	<% end %>
+</div>
