@@ -1,6 +1,8 @@
+<%if notice %>
 <p id="notice"><%= notice %></p>
+<% end %>
 
-<p>
+<div>
   <b>Topic:</b>
   <%= @ticket.topic %>
 </p>
@@ -17,4 +19,5 @@
 
 
 <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'Back', tickets_path %>
+<%= link_to 'Back', overview_path %>
+</div>
