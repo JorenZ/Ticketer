@@ -13,8 +13,10 @@
 	<div id="banner">
 		<%#= image_tag( "logo.png" ) %> <%= @page_title || "Ticketer" %>
 		
-		<div class="nav"><a href="http://localhost:3000/">Overview</a>
-			<a href="http://localhost:3000/tickets/new">New ticket</a></div>
+		<div class="nav">
+			<a href="http://localhost:3000/">Overview</a>
+			<a href="http://localhost:3000/tickets/new">New ticket</a>
+		</div>
 	</div>
 
 	<div id="main">
@@ -24,6 +26,9 @@
 	<div id="footer">
 		Page loaded on <%= Time.now.to_date %>, <%= Time.now.strftime( "%H:%M" ) %>
 		<br/> (c) Joren Zandstra <%= Time.now.year %>
+		<div style="debug_dump"> 
+			<%= debug( params ) if Rails.env.development? %> 
+		</div>
 	</div>
 
 </body>
