@@ -42,4 +42,8 @@ gem 'i18n'
 # To use debugger
 # gem 'debugger'
 
+# Pagination
 gem 'will_paginate', '~> 3.0'
+
+# Passwords
+gem 'bcrypt-ruby', '~> 3.0.0'
