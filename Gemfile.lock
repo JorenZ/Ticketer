@@ -43,6 +43,11 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.2.1)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
+      railties (>= 3.0.0)
     hike (1.2.3)
     i18n (0.6.11)
     journey (1.0.4)
@@ -138,11 +143,13 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 3.2.1)
+  factory_girl_rails
   i18n
   jquery-rails
   pg (~> 0.15)
   pg_power (= 1.3.1)
   rails (= 3.2.13)
+  rspec-rails
   sass-rails (~> 3.2.3)
   strong_parameters
   thin

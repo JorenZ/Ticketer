@@ -5,7 +5,6 @@ class Ticket < ActiveRecord::Base
   validates :topic, :inclusion => { :in => %w(Management Finance Afsprakenbureau) }
 
 scope :removed, where( removed: true )  
-scope :not_removed, where( removed: false )
 
 def removed?
   return self.removed

@@ -34,13 +34,13 @@
 
         <%if ticket.removed %>
         <td class="list_actions">
-          <%= render :partial => "tickets/remove_restore_ticket", :locals => { :ticket => ticket } %>
+          <%= render :partial => "tickets/ticket_actions", :locals => { :ticket => ticket } %>
         </td>
         <% else %>
         <td class="list_actions">
                 <%= link_to 'Show', ticket %>
           <br/> <%= link_to 'Edit', edit_ticket_path( ticket ) %>
-          <br/> <%= render :partial => "tickets/remove_restore_ticket", :locals => { :ticket => ticket } %>
+          <br/> <%= render :partial => "tickets/ticket_actions", :locals => { :ticket => ticket } %>
         </td>
         <% end %>
 

@@ -28,7 +28,7 @@ gem 'thin'
 gem 'i18n'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
@@ -45,11 +45,15 @@ gem 'i18n'
 # Pagination
 gem 'will_paginate', '~> 3.0'
 
-# Passwords
-gem 'bcrypt-ruby', '~> 3.0.0'
-
 # Strong parameters to allow private method x_params with 
 # 	X.create( x_params ) 
 # instead of 
 # 	X.new( :x )
 gem 'strong_parameters'
+
+group :development, :test do
+	gem "rspec-rails"
+end
+
+# factories
+gem 'factory_girl_rails'

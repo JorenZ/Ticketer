@@ -4,9 +4,9 @@ class OverviewControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_select '#columns #side a', minimum: 2
-    assert_select 'h2', 'Afsprakenbureau'
-    assert_select '#main .ticket', 2
+    assert_select '#banner', /Ticketer/
+    assert_select '.table', /Afsprakenbureau/
+    assert_select '#main .tbody', 1
   end
 
 end
