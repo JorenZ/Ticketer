@@ -5,6 +5,11 @@ Ticketer::Application.routes.draw do
   resources :overview
   resources :users
 
+  resources :sessions, only: [ :new, :create, :destroy ]
+  
+  get 'signup'  => 'users#new'
+  get 'login'  => 'sessions#new'
+  delete 'logout' => 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

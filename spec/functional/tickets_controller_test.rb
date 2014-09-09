@@ -3,10 +3,7 @@ require 'test_helper'
 class TicketsControllerTest < ActionController::TestCase
   setup do
     @ticket = tickets(:one)
-    @update = {
-      body: 'Test-ticket',
-      topic: 'Management'
-    }
+    @ticket2 = tickets(:two)
   end
 
   test "should get index" do
@@ -39,7 +36,7 @@ class TicketsControllerTest < ActionController::TestCase
   end
 
   test "should update ticket" do
-    put :update, id: @ticket, ticket: { body: @ticket.body, state: @ticket.state, topic: @ticket.topic }
+    put :update, id: @ticket, ticket: { body: @ticket2.body, state: @ticket2.state, topic: @ticket2.topic }
     assert_redirected_to ticket_path(assigns(:ticket))
   end
 
