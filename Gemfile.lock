@@ -31,6 +31,12 @@ GEM
     arel (3.0.3)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
+    capybara (2.4.1)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -59,7 +65,10 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_portile (0.6.0)
     multi_json (1.10.1)
+    nokogiri (1.6.3.1)
+      mini_portile (= 0.6.0)
     pg (0.17.1)
     pg_power (1.3.1)
       pg
@@ -107,6 +116,7 @@ GEM
       rspec-mocks (~> 3.0.0)
       rspec-support (~> 3.0.0)
     rspec-support (3.0.4)
+    ruby-prof (0.15.1)
     sass (3.3.14)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -136,12 +146,15 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     will_paginate (3.0.7)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
+  capybara
   coffee-rails (~> 3.2.1)
   factory_girl_rails
   i18n
@@ -149,7 +162,8 @@ DEPENDENCIES
   pg (~> 0.15)
   pg_power (= 1.3.1)
   rails (= 3.2.13)
-  rspec-rails
+  rspec-rails (~> 3.0.0)
+  ruby-prof
   sass-rails (~> 3.2.3)
   strong_parameters
   thin

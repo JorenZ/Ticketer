@@ -52,8 +52,13 @@ gem 'will_paginate', '~> 3.0'
 gem 'strong_parameters'
 
 group :development, :test do
-	gem "rspec-rails"
+	gem "rspec-rails", '~> 3.0.0'
+  gem "ruby-prof"
+
+  # factories
+  gem 'factory_girl_rails'
 end
 
-# factories
-gem 'factory_girl_rails'
+group :test do
+  gem 'capybara'
+end
