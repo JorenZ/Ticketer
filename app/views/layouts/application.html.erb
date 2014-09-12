@@ -13,11 +13,11 @@
 	<div id="banner">
 		<p class="title apptitle">Ticketer</p>
 		<p class="nav">
-				<%# if logged_in? %>
+				<% if logged_in? %>
 					Logged in as <%= current_user.name %>; <%= link_to "Log out", logout_path, method: "delete" %>
-				<%# else %>
-					<!-- <a href="http://localhost:3000/login">Log in</a> -->
-				<%# end %>
+				<% else %>
+					<a href="http://localhost:3000/login">Log in</a>
+				<% end %>
 		</p>
 	</div>
 
