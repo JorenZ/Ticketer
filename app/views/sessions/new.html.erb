@@ -1,5 +1,7 @@
 <% content_for( :title, "Log in!" ) %>
 
+<%= render :partial => "layouts/flash_messages" %>
+
 <%= render 'form' %>
 
 <%= link_to 'Back', overview_path %>
