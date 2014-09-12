@@ -1,15 +1,14 @@
 Ticketer::Application.routes.draw do
   get "overview/index"
 
-  resources :tickets
-  resources :overview
-  resources :users
-
-  resources :sessions, only: [ :new, :create, :destroy ]
-  
   get 'signup'  => 'users#new'
   get 'login'  => 'sessions#new'
   delete 'logout' => 'sessions#destroy'
+
+  resources :tickets
+  resources :overview
+  resources :users
+  resources :sessions, only: [ :new, :create, :destroy ]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

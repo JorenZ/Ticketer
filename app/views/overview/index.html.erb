@@ -1,8 +1,6 @@
 <% provide( :title, "Overview" ) %>
 
-<%if notice %>
-<p id="notice"><%= notice %></p>
-<% end %>
+<%= render :partial => "layouts/flash_messages" %>
 
 <div class="table">
 	<div class="thead">

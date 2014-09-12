@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+<header>
   <title><%= "Ticketer | " + yield( :title ) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-</head>
+</header>
 
 <body>
 
 	<div id="banner">
-		<%#= image_tag( "logo.png" ) %> <%= @page_title || "Ticketer" %>
+		<%= "Ticketer | " + yield( :title ) %>
 		
-		<div class="nav">
-			<a href="http://localhost:3000/">Overview</a>
-			<a href="http://localhost:3000/tickets/new">New ticket</a>
-		</div>
+		<div class="nav pull-right">
+			
+				<%# if logged_in? %>
+					Logged in as <%= current_user.name %>; <%= link_to "Log out", logout_path, method: "delete" %>
+				<%# else %>
+					<!-- <a href="http://localhost:3000/login">Log in</a> -->
+				<%# end %>
+ 		</div>
 	</div>
 
 	<div id="main">
