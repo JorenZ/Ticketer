@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140829130016) do
+ActiveRecord::Schema.define(:version => 20141017150611) do
 
 
 
@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(:version => 20140829130016) do
     t.string   "topic"
     t.string   "body"
     t.string   "state"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
-    t.boolean  "removed",       :default => false
-    t.integer  "programmer_id"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "removed",    :default => false
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

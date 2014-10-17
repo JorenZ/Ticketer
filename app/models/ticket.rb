@@ -6,12 +6,18 @@ class Ticket < ActiveRecord::Base
 
 scope :removed, where( removed: true )  
 
+belongs_to :user
+
+def remove
+  @ticket.removed = true
+end
+
 def removed?
   return self.removed
 end
 
-def remove
-  @ticket.removed = true
+def assigned?
+  return true if self.programmer_id.presence 
 end
 
 end
