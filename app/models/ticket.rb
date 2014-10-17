@@ -10,4 +10,8 @@ def removed?
   return self.removed
 end
 
+def remove
+  @ticket.removed = true
+end
+
 end
