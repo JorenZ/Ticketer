@@ -20,8 +20,8 @@
 								<%= ticket.topic %></div>
 							<div class="<%= ticket.removed? ? 'td large removed' : 'td large' %>">
 								<%= sanitize( ticket.body ) %></div>
-							<div class="<%= ticket.removed? ? 'td number small removed' : 'td number small' %>">
-								<%= ticket.programmer_id %></div>
+							<div class="<%= ticket.removed? ? 'td medium removed' : 'td medium' %>">
+								<%= render :partial => "tickets/ticket_programmers", :locals => { :ticket => ticket } %></div>
 							<div class="<%= ticket.removed? ? 'td number small removed' : 'td number small' %>">
 								<%= ticket.created_at.to_date %></div>
 							<div class="<%= ticket.removed? ? 'td medium removed' : 'td medium' %>">
