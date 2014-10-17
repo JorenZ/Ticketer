@@ -26,7 +26,6 @@ feature "Session" do
     visit login_path
     fill_in "session_email",    :with => @user.email
     fill_in "session_password", :with => @user.password
-    save_and_open_page
     click_button "Log in"
 
     expect( page ).to have_css '.notice', text: /successful!/

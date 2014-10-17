@@ -17,6 +17,10 @@
   <%= @ticket.state %>
 </p>
 
+<p>
+  <b>Ticket removed?</b>
+  <%= @ticket.removed %>
+</p>
 
 <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
 <%= link_to 'Back', overview_path %>
