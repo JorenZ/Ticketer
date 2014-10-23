@@ -16,15 +16,15 @@
 	<div class="tbody">
 			<% @tickets.each do |ticket| %>
 					<a class="tr" href="<%= ticket_path( :id => ticket.id ) %>">
-							<div class="<%= ticket.removed? ? 'td medium removed' : 'td medium' %>">
+							<div class="<%= ticket.removed? ? 'td small removed' : 'td small' %>">
 								<%= ticket.topic %></div>
 							<div class="<%= ticket.removed? ? 'td large removed' : 'td large' %>">
 								<%= sanitize( ticket.body ) %></div>
 							<div class="<%= ticket.removed? ? 'td medium removed' : 'td medium' %>">
 								<%= render :partial => "tickets/ticket_users", :locals => { :ticket => ticket } %></div>
-							<div class="<%= ticket.removed? ? 'td number small removed' : 'td number small' %>">
+							<div class="<%= ticket.removed? ? 'td small removed' : 'td small' %>">
 								<%= ticket.created_at.to_date %></div>
-							<div class="<%= ticket.removed? ? 'td medium removed' : 'td medium' %>">
+							<div class="<%= ticket.removed? ? 'td small removed' : 'td small' %>">
 								<%= render :partial => "tickets/ticket_actions", :locals => { :ticket => ticket } %></div>
 					</a>
 			<% end %>

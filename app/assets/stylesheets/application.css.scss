@@ -46,6 +46,41 @@ input {
     height: auto !important;
 }
 
+/*****************************
+*  ERRORS AND NOTIFICATIONS  *
+******************************/
+
+.field_with_errors {
+  padding: 2px;
+  background-color: $red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid $red;
+  border-radius: 5px;
+  padding: 7px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  /*background-color: $violet;*/
+  font-size: 16px;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: $red;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: none;
+  }
+}
+
 /**************************
 *  INTERFACE COMPONENTS   *
 **************************/
@@ -203,7 +238,7 @@ table, section.table, div.table {
 *     OVERVIEW TICKETS    *
 **************************/
 .small {
-  width: 8%;
+    width: 8%;
 }
 
 .medium {

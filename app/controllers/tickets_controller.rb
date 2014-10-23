@@ -41,7 +41,7 @@ class TicketsController < ApplicationController
   # POST /tickets.json
   def create
     @ticket = Ticket.new( ticket_params )
-
+ 
     respond_to do |format|
       if @ticket.save
         format.html { redirect_to @ticket, notice: 'Ticket was successfully created.' }
@@ -90,7 +90,7 @@ end
   private
 
   def ticket_params
-    params.require( :ticket ).permit( :body, :topic )
+    params.require( :ticket ).permit( :body, :topic, :user_id )
   end
 
 end

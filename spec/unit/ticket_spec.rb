@@ -31,5 +31,4 @@ describe Ticket do
     assert @ticket1.valid?, "Users with role '#{@user3.role}' should be allowed to be assigned to tickets"
   end
 
-
 end

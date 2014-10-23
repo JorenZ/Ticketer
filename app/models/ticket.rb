@@ -4,7 +4,8 @@ class Ticket < ActiveRecord::Base
 
   validates_presence_of :topic, :body
   validates :topic, :inclusion => { :in => %w(Management Finance Afsprakenbureau) }
-  
+  validate :validate_user_role
+
 scope :removed, where( removed: true )  
 
 belongs_to :user
@@ -21,15 +22,18 @@ def assigned?
   return true if !self.programmer_id.nil
 end
 
+private 
+
 def validate_user_role
-  @user = self.user
-  if @user === nil 
+  
+  if self.user.nil?
     return
-  elsif @user.role = 'Programmer' or @user.role = 'Administrator'
+  elsif [ 'Programmer', 'Administrator' ].include?(self.user.role)
     return
   else
-    raise "#{role} must be either programmer or administrator"
-  end 
+    self.errors.add( :user, "role must be either programmer or administrator" )
+  end
+
 end
 
 end

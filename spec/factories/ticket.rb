@@ -18,7 +18,7 @@ FactoryGirl.define do
 
   trait :finance do
     topic 'Finance'
-    body 'Factory-created management finance ticket'
+    body 'Factory-created finance ticket'
   end
 
 end
