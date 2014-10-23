@@ -2,11 +2,6 @@ require 'rails_helper'
 
 describe User do 
 
-  it "should build valid user with factory" do
-    user = FactoryGirl.build :user, email: "uniqueemail@example.com"
-    assert user.valid?, 'Factory-created user should be valid'
-  end
-
   before do
     @user1 = FactoryGirl.build :user
     @user2 = FactoryGirl.build :user,          email: "emailtwo@example.com"
@@ -32,7 +27,9 @@ describe User do
     @user1.role = "Programmer" # case-sensitive
     assert @user1.valid?, "'Programmer' (case-sensitive) should be an allowed role"
     @user1.role = "Administrator" # case-sensitive
-    assert @user1.valid?, "'Administrator'  (case-sensitive) should be an allowed role"
+    assert @user1.valid?, "'Administrator' (case-sensitive) should be an allowed role"
+    @user1.role = "User" # case-sensitive
+    assert @user1.valid?, "'User' (case-sensitive) should be an allowed role"
     @user1.role = "Nonsenserole"
     assert !@user1.valid?, 'Invalid roles should not be accepted'
   end

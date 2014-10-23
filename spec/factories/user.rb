@@ -14,4 +14,12 @@ FactoryGirl.define do
     role 'Administrator'
   end
 
+  trait :programmer do
+    role 'Programmer'
+  end
+  
+  trait :user do
+    role 'User'
+  end
+
 end

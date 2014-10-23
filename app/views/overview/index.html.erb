@@ -7,7 +7,7 @@
 		<div class="tr">
 				<div class="th medium">Topic</div>
 				<div class="th large">Body</div>
-				<div class="th small">Programmer</div>
+				<div class="th small">Assigned Programmer</div>
 				<div class="th small">Date</div>
 				<div class="th medium">Action</div>
 		</div>
@@ -21,7 +21,7 @@
 							<div class="<%= ticket.removed? ? 'td large removed' : 'td large' %>">
 								<%= sanitize( ticket.body ) %></div>
 							<div class="<%= ticket.removed? ? 'td medium removed' : 'td medium' %>">
-								<%= render :partial => "tickets/ticket_programmers", :locals => { :ticket => ticket } %></div>
+								<%= render :partial => "tickets/ticket_users", :locals => { :ticket => ticket } %></div>
 							<div class="<%= ticket.removed? ? 'td number small removed' : 'td number small' %>">
 								<%= ticket.created_at.to_date %></div>
 							<div class="<%= ticket.removed? ? 'td medium removed' : 'td medium' %>">
