@@ -5,7 +5,6 @@ describe UsersController do
   before do
     @user1 = FactoryGirl.create :user
     @user2 = FactoryGirl.create :user, email: "emailtwo@example.com"
-    @admin = FactoryGirl.create :user, :admin, email: "adminemail@example.com"
   end
 
   it "should get index" do
@@ -38,7 +37,7 @@ describe UsersController do
   end
 
   it "should update user" do
-    put :update, id: @user1, ticket: { body: @user2.name, topic: @user2.role }
+    put :update, id: @user1, user: { email: @user2.email, role: @user2.role }
     assert_response :success
   end
 

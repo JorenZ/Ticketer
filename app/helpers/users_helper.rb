@@ -1,7 +1,7 @@
 module UsersHelper
 
 def roles
-		[ 'Programmer', 'Administrator' ]
+		[ 'User', 'Programmer', 'Administrator' ]
 end
 
 end
