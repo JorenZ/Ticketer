@@ -13,15 +13,14 @@
 </p>
 
 <p>
-  <b>State:</b>
-  <%= @ticket.state %>
+  <b>Status:</b>
+  <%= @ticket.status %>
 </p>
 
 <p>
-  <b>Ticket removed?</b>
-  <%= @ticket.removed %>
+  <b>Assignment status:</b>
+  <%= @ticket.assignment_status %>
 </p>
-
 <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
 <%= link_to 'Back', overview_path %>
 </div>
