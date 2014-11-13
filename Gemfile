@@ -49,12 +49,12 @@ gem 'strong_parameters'
 group :development, :test do
 	gem "rspec-rails", '~> 3.0.0'
   gem "ruby-prof"
-
-  # factories
-  gem 'factory_girl_rails'
 end
 
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
+
+  # factories
+  gem 'factory_girl_rails'
 end
