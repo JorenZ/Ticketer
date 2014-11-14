@@ -1,0 +1,12 @@
+<!-- <#%= link_to 'Edit', edit_ticket_path(@ticket) %>  -->
+<% if @ticket.status = 'open' %>
+  <% link_to "Close ticket", @ticket, :method => :close %>
+  <% link_to "Remove ticket", @ticket, :method => :remove %>
+<% elsif @ticket.status = 'closed' %>
+  Reopen ticket 
+  Remove ticket 
+<% elsif @ticket.status = 'removed' %>
+  Reopen ticket 
+<% end %>
+<!-- <#%= link_to 'Back', overview_path %> -->
+

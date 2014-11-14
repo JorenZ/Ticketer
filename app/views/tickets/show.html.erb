@@ -21,6 +21,9 @@
   <b>Assignment status:</b>
   <%= @ticket.assignment_status %>
 </p>
+<%= render :partial => "tickets/ticket_actions", :locals => { :ticket => @ticket } %>
+<br/>
+<br/>
 <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
 <%= link_to 'Back', overview_path %>
 </div>

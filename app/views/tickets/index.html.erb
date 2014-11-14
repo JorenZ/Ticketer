@@ -14,37 +14,17 @@
     <% @tickets.each do |ticket| %>
       <tr class="<%= cycle( 'list_line_odd', 'list_line_even' ) %>">
 
-        <%if ticket.removed %>
-          <td class="list_ticket removed">
-        <% else %>
-          <td class="list_ticket">
-        <% end %>
+        <td class="list_ticket">
           <dl>
             <dt><%= ticket.topic %></dt>
           </dl>
         </td>
 
-        <%if ticket.removed %>
-          <td class="list_ticket removed">
-        <% else %>
-          <td class="list_ticket">
-        <% end %>
+        <td class="list_ticket">
           <dl>
             <dd><%= truncate( strip_tags( ticket.body ), length: 80 ) %></dd>
           </dl>
         </td>
-
-        <%if ticket.removed %>
-        <td class="list_actions">
-          <%= render :partial => "tickets/ticket_actions", :locals => { :ticket => ticket } %>
-        </td>
-        <% else %>
-        <td class="list_actions">
-                <%= link_to 'Show', ticket %>
-          <br/> <%= link_to 'Edit', edit_ticket_path( ticket ) %>
-          <br/> <%= render :partial => "tickets/ticket_actions", :locals => { :ticket => ticket } %>
-        </td>
-        <% end %>
 
       </tr>
     <% end %>

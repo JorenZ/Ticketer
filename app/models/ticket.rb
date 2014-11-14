@@ -31,9 +31,37 @@ state_machine :status, :initial => :open do
     transition any => :open
   end
 
+  state :open do
+    validates_presence_of :topic, :body
+    validates :topic, :inclusion => { :in => %w(Management Finance Afsprakenbureau) }
+    validate :validate_user_role      
+  end
+
+  state :closed do
+    validates_presence_of :topic, :body
+    validates :topic, :inclusion => { :in => %w(Management Finance Afsprakenbureau) }
+    validate :validate_user_role      
+  end
+
+  state :removed do
+    validates_presence_of :topic, :body
+    validates :topic, :inclusion => { :in => %w(Management Finance Afsprakenbureau) }
+    validate :validate_user_role      
+  end
 end
 
-  
+def remove
+  self.remove
+end
+
+def close
+  self.close
+end
+
+def reopen
+  self.open
+end
+
 
 private 
 
