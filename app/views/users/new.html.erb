@@ -1,6 +1,7 @@
 <% provide( :title, "New User" ) %>
 
 <%= render :partial => "layouts/flash_messages" %>
+<%= render :partial => "layouts/errors", locals: { :item => @user } %>
 
 <%= render 'form' %>
 

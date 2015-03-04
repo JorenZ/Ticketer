@@ -36,7 +36,7 @@ describe Ticket do
 
   it "should only allow users with the correct role" do
     @ticket1.user = @user1
-    assert !@ticket1.valid?, "Users with role '#{@user1.role}' should not be assigned to tickets"
+    assert !@ticket1.valid?, "Users with role '#{@user1.role}' should not be allowed to be assigned to tickets"
     @ticket1.user = @user2
     assert @ticket1.valid?, "Users with role '#{@user2.role}' should be allowed to be assigned to tickets"
     @ticket1.user = @user3

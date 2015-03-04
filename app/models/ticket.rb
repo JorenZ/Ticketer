@@ -5,13 +5,9 @@ class Ticket < ActiveRecord::Base
 
   validates_presence_of :topic, :body
   validates :topic, :inclusion => { :in => %w(Management Finance Afsprakenbureau) }
-  validate :validate_user_role
+  # validate :validate_user_role
 
   belongs_to :user
-
-def assigned?
-  return true if !self.assignment_status = 'assigned'
-end
 
 # Possible ticket states:
 # open (after creation), 
@@ -67,10 +63,11 @@ private
 
 def validate_user_role
   if self.user.nil?
-    return
+    return true
   elsif [ 'Programmer', 'Administrator' ].include?(self.user.role)
-    return
+    return true
   else
+    return false
     self.errors.add( :user, "role must be either programmer or administrator" )
   end
 end

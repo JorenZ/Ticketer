@@ -11,17 +11,18 @@
 <body>
 
 	<div id="banner">
-		<p class="title apptitle">Ticketer</p>
-		<p class="nav">
+		<p>
+			<span class="title">Ticketer | <%= controller_name.capitalize %></span>
+			<span class="login">
 				<% if logged_in? %>
 					Logged in as <%= current_user.name %>; <%= link_to "Log out", logout_path, method: "delete" %>
 				<% else %>
-					<a href="http://localhost:2999/login">Log in</a>
+					<a href="http://localhost:3002/login">Log in</a>
 				<% end %>
+			</span>
 		</p>
+		<p><%= render :partial => "layouts/nav" %></p>
 	</div>
-
-	<%= render "layouts/nav_#{ controller_name }" %>
 
 	<div id="main">
 		<%= yield %>

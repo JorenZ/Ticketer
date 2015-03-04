@@ -1,12 +1,11 @@
 Ticketer::Application.routes.draw do
-  get "overview/index"
+  get "tickets/index"
 
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   delete 'logout' => 'sessions#destroy'
 
   resources :tickets
-  resources :overview
   resources :users
   resources :sessions, only: [ :new, :create, :destroy ]
 
@@ -61,7 +60,7 @@ Ticketer::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'overview#index', as: 'overview'
+   root :to => 'tickets#index', as: 'tickets'
 
   # See how all your routes lay out with "rake routes"
 

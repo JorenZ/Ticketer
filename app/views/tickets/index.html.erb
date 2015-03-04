@@ -1,36 +1,36 @@
-<% provide( :title, "tickets" ) %>
+<% provide( :title, "Tickets" ) %>
 
-<%= render "layouts/flash_messages" %>
+<%= render :partial => "layouts/flash_messages" %>
 
-<table>
-  <thead>
-      <tr>
-        <th class="header"> topic </th>
-        <th class="header"> body </th>
-        <th class="header"> options </th>
-      </tr>
-  </thead>
-  <tbody>
-    <% @tickets.each do |ticket| %>
-      <tr class="<%= cycle( 'list_line_odd', 'list_line_even' ) %>">
+<div class="table">
+  <div class="thead">
+    <div class="tr">
+        <div class="th small">Status</div>
+        <div class="th small">Date</div>
+        <div class="th small">Topic</div>
+        <div class="th large">Body</div>
+        <div class="th small">Assignment Status</div>
+        <div class="th small">Assigned Programmer</div>
+    </div>
+  </div>
+  
+  <div class="tbody">
+      <% @tickets.each do |ticket| %>
+          <a class="tr" href="<%= ticket_path( :id => ticket.id ) %>">
+              <div class="td"><%= ticket.status %></div>
+              <div class="td"><%= ticket.created_at.to_date %></div>
+              <div class="td"><%= ticket.topic %></div>
+              <div class="td"><%= sanitize( ticket.body ) %></div>
+              <div class="td"><%= ticket.assignment_status %></div>
+              <div class="td"><%= render :partial => "tickets/ticket_users", :locals => { :ticket => ticket } %></div>
+          </a>
+      <% end %>
+  </div>
 
-        <td class="list_ticket">
-          <dl>
-            <dt><%= ticket.topic %></dt>
-          </dl>
-        </td>
+  <!-- <div class="tfoot"> -->
+  <!-- </div> -->
+</div>
 
-        <td class="list_ticket">
-          <dl>
-            <dd><%= truncate( strip_tags( ticket.body ), length: 80 ) %></dd>
-          </dl>
-        </td>
-
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br />
-
-<%= link_to 'New Ticket', new_ticket_path %>
+<div style="text-align: center;">
+  <%= will_paginate @tickets %>
+</div>
