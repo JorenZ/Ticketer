@@ -1,27 +1,15 @@
 class TicketsController < ApplicationController
 
   def index
-      @tickets = Ticket.paginate page: params[ :page ], order: [ 'topic asc', 'body asc' ], per_page: 15
-
-    respond_to do |format|
-      format.html # index.html.erb
-    end
+    @tickets = Ticket.paginate page: params[ :page ], order: [ 'topic asc', 'body asc' ], per_page: 15
   end
 
   def show
     @ticket = Ticket.find( params[:id] )
-
-    respond_to do |format|
-      format.html # show.html.erb
-    end
   end
 
   def new
     @ticket = Ticket.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-    end
   end
 
   def edit

@@ -11,7 +11,7 @@
 <body>
 
 	<div id="banner">
-		<p>
+		<div>
 			<span class="title">Ticketer | <%= controller_name.capitalize %></span>
 			<span class="login">
 				<% if logged_in? %>
@@ -20,8 +20,9 @@
 					<a href="http://localhost:3002/login">Log in</a>
 				<% end %>
 			</span>
-		</p>
-		<p><%= render :partial => "layouts/nav" %></p>
+		</div><br/>
+		<div><%= render :partial => "layouts/nav" %></div>
+		<div><%= render :partial => "layouts/nav_env_#{ controller_name }" %></div>
 	</div>
 
 	<div id="main">
@@ -31,11 +32,9 @@
 	<div id="footer">
 		Page loaded on <%= Time.now.to_date %>, <%= Time.now.strftime( "%H:%M" ) %>
 		<br/> (c) Joren Zandstra <%= Time.now.year %>
-		<div style="debug_dump"> 
-			<%= debug( params ) if Rails.env.development? %> 
-		</div>
+		<div><%= debug( params ) if Rails.env.development? %></div>
 	</div>
 
-</body>
+</body> 
 
 </html>

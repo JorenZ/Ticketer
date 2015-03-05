@@ -1,0 +1,12 @@
+Wed, 04 Mar 2015 15:17:16 +0100
+doc/README_FOR_APP	Thu, 23 Oct 2014 12:19:07 +0200
+app/controllers/application_controller.rb	Thu, 23 Oct 2014 12:19:07 +0200
+app/controllers/sessions_controller.rb	Wed, 04 Mar 2015 15:10:21 +0100
+app/controllers/tickets_controller.rb	Wed, 04 Mar 2015 14:52:33 +0100
+app/controllers/users_controller.rb	Wed, 04 Mar 2015 15:15:16 +0100
+app/helpers/application_helper.rb	Wed, 04 Mar 2015 14:38:38 +0100
+app/helpers/sessions_helper.rb	Thu, 23 Oct 2014 12:19:07 +0200
+app/helpers/tickets_helper.rb	Tue, 11 Nov 2014 17:40:26 +0100
+app/helpers/users_helper.rb	Thu, 23 Oct 2014 12:19:08 +0200
+app/models/ticket.rb	Thu, 27 Nov 2014 17:24:57 +0100
+app/models/user.rb	Thu, 23 Oct 2014 12:21:26 +0200

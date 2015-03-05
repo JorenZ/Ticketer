@@ -1,43 +1,33 @@
 <%= form_for( @user ) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize( @user.errors.count, "error" ) %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <div id="form">
+    <div class="field_title">Name</div>
+    <div class="field">
+      <%= f.text_field :name %>
     </div>
-  <% end %>
 
-  <div class="field_title">Name</div>
-  <div class="field">
-    <%= f.text_field :name %>
+    <div class="field_title">Role</div>
+    <div class="field">
+      <%= f.select :role, roles %>
+    </div>
+    
+    <div class="field_title">Email</div>
+    <div class="field">
+      <%= f.text_field :email %>
+    </div>  
+    
+    <div class="field_title">Password</div>
+    <div class="field">
+      <%= f.password_field :password %>
+    </div>  
+    
+    <div class="field_title">Re-type Password</div>
+    <div class="field">
+      <%= f.password_field :password_confirmation %>
+    </div>  
+    
+    <div style="margin-top: 5em; float: right">
+      <span><%= link_to 'Back', users_path %></span> or <span class="actions"><%= f.submit %></span>
+    </div>
   </div>
-
-  <div class="field_title">Role</div>
-  <div class="field">
-    <%= f.select :role, roles %>
-  </div>
-  
-  <div class="field_title">Email</div>
-  <div class="field">
-    <%= f.text_field :email %>
-  </div>  
-  
-  <div class="field_title">Password</div>
-  <div class="field">
-    <%= f.password_field :password %>
-  </div>  
-  
-  <div class="field_title">Re-type Password</div>
-  <div class="field">
-    <%= f.password_field :password_confirmation %>
-  </div>  
-  
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
 <% end %>

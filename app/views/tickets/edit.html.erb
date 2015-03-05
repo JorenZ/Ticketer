@@ -1,9 +1,8 @@
 <% provide( :title, "Edit ticket" ) %>
 
 <%= render :partial => "layouts/flash_messages" %>
-<%= render :partial => "layouts/errors", locals: { :item => @ticket } %>
+<%#= render :partial => "layouts/errors", locals: { :item => @ticket } %>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @ticket %> |
-<%= link_to 'Back', tickets_path %>

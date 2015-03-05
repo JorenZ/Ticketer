@@ -15,3 +15,21 @@ Ticket.create(
 Ticket.create(
 	topic: 'Afsprakenbureau',
 	body: 'Seed-ticket number two...')
+
+User.create(
+  name: 'Joren',
+  role: 'Administrator',
+  email: 'joren@studentaanhuis.nl',
+  password: 'passwordone',
+  password_confirmation: 'passwordone',
+  password_digest: '$2a$10$ibV9itmyBdNik93gRIlIRO9HVeM0fdwTNKylv4fOwrpVYKD6RN7Z2' # actual digest for 'passwordone'
+  )
+
+User.create(
+  name: 'Programmerdude',
+  role: 'Programmer',
+  email: 'programmer@studentaanhuis.nl',
+  password: 'passwordone',
+  password_confirmation: 'passwordone',
+  password_digest: '$2a$10$ibV9itmyBdNik93gRIlIRO9HVeM0fdwTNKylv4fOwrpVYKD6RN7Z2' # actual digest for 'passwordone'
+  )

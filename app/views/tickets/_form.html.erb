@@ -1,5 +1,6 @@
 <%= form_for(@ticket) do |f| %>
 
+<div id="form">
   <div class="field_title">Topic</div>
   <div class="field">
     <%= f.select :topic, topic_options %>
@@ -15,7 +16,9 @@
     <%= f.select :user_id, user_options, { include_blank: true } %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div style="margin-top: 5em; float: right">
+    <span><%= link_to 'Back', tickets_path %></span> or <span class="actions"><%= f.submit %></span>
   </div>
+</div>
+
 <% end %>
