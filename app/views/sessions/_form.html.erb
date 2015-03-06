@@ -1,5 +1,6 @@
 <%= form_for( :session, url: sessions_path ) do |f| %>
 
+<div id="form">
   <div class="field_title">Email</div>
   <div class="field">
     <%= f.text_field :email %>
@@ -14,6 +15,7 @@
     <%= f.submit "Log in" %>
   </div>
 
-  <div>Do not have an account? Contact Joren at joren@studentaanhuis.nl.</div>
+  <div>If you don't have an account, contact Joren at joren@studentaanhuis.nl.</div>
+</div>
 
 <% end %>
