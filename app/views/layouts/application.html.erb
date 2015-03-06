@@ -17,7 +17,7 @@
 				<% if logged_in? %>
 					Logged in as <%= current_user.name %>; <%= link_to "Log out", logout_path, method: "delete" %>
 				<% else %>
-					<a href="http://localhost:3002/login">Log in</a>
+					<%= link_to "Log in", login_path %>
 				<% end %>
 			</span>
 		</div><br/>
