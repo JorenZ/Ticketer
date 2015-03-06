@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20141111160806) do
     t.string   "topic"
     t.string   "body"
     t.text     "status",            :default => "open"
-    t.string   "assignment_status", :default => "Unassigned"
+    t.string   "assignment_status", :default => "unassigned"
     t.integer  "user_id"
     t.datetime "created_at",                                  :null => false
     t.datetime "updated_at",                                  :null => false

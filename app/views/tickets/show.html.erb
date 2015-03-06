@@ -2,25 +2,4 @@
 
 <%= render :partial => "layouts/flash_messages" %>
 
-<div>
-  <b>Topic:</b>
-  <%= @ticket.topic %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%= @ticket.body %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @ticket.status %>
-</p>
-
-<p>
-  <b>Assignment status:</b>
-  <%= @ticket.assignment_status %>
-</p>
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'Back', overview_path %>
-</div>
+<%= render :partial => "ticket" %>

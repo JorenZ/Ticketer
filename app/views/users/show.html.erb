@@ -2,20 +2,4 @@
 
 <%= render :partial => "layouts/flash_messages" %>
 
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
-
-<p>
-  <b>Role:</b>
-  <%= @user.role %>
-</p>
-
-<p>
-	<b>Email:</b>
-	<%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', overview_path %>
+<%= render :partial => "user" %>
