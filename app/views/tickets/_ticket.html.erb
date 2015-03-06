@@ -1,0 +1,23 @@
+<div class="ticket">
+  <p>
+    <span class="data_header"><b>Topic:</b></span>
+    <span class="data"><%= @ticket.topic %></span>
+  </p>
+
+  <p>
+    <span class="data_header"><b>Body:</b></span>
+    <span class="data"><%= @ticket.body %></span>
+  </p>
+
+  <p>
+    <span class="data_header"><b>Status:</b></span>
+    <span class="data"><%= @ticket.status %></span>
+  </p>
+
+  <p>
+    <span class="data_header"><b>Assignment status:</b></span>
+    <span class="data"><%= @ticket.assignment_status %></span>
+  </p>
+
+  <%= render :partial => "tickets/ticket_actions", :locals => { :ticket => @ticket } %>
+</div>

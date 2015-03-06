@@ -11,17 +11,19 @@
 <body>
 
 	<div id="banner">
-		<p class="title apptitle">Ticketer</p>
-		<p class="nav">
+		<div>
+			<span class="title">Ticketer | <%= controller_name.capitalize %></span>
+			<span class="login">
 				<% if logged_in? %>
 					Logged in as <%= current_user.name %>; <%= link_to "Log out", logout_path, method: "delete" %>
 				<% else %>
-					<a href="http://localhost:2999/login">Log in</a>
+					<a href="http://localhost:3002/login">Log in</a>
 				<% end %>
-		</p>
+			</span>
+		</div><br/>
+		<div><%= render :partial => "layouts/nav" %></div>
+		<div><%= render :partial => "layouts/nav_env_#{ controller_name }" %></div>
 	</div>
-
-	<%= render "layouts/nav_#{ controller_name }" %>
 
 	<div id="main">
 		<%= yield %>
@@ -30,11 +32,9 @@
 	<div id="footer">
 		Page loaded on <%= Time.now.to_date %>, <%= Time.now.strftime( "%H:%M" ) %>
 		<br/> (c) Joren Zandstra <%= Time.now.year %>
-		<div style="debug_dump"> 
-			<%= debug( params ) if Rails.env.development? %> 
-		</div>
+		<div><%= debug( params ) if Rails.env.development? %></div>
 	</div>
 
-</body>
+</body> 
 
 </html>

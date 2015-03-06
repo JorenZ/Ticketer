@@ -13,37 +13,11 @@
  *= require_tree .
  */
 
-/**************************
-*    SOLARIZED COLORS     *
-**************************/
-$base03:    #002b36;
-$base02:    #073642;
-$base01:    #586e75;
-$base00:    #657b83;
-$base0:     #839496;
-$base1:     #93a1a1;
-$base2:     #eee8d5;
-$base3:     #fdf6e3;
-$yellow:    #b58900;
-$orange:    #cb4b16;
-$red:       #dc322f;
-$magenta:   #d33682;
-$violet:    #6c71c4;
-$blue:      #268bd2;
-$cyan:      #2aa198;
-$green:     #859900;
+$min-width: 960px;
+$max-width: 1020px;
 
-
-
-/**************************
-*       PAGE ELEMENTS     *
-**************************/
-body {
-    background-color: #EAF3FA;
-}
-
-input {
-    height: auto !important;
+@mixin align-items($arg) {
+    align-items: $arg;
 }
 
 /*****************************
@@ -51,34 +25,36 @@ input {
 ******************************/
 
 .field_with_errors {
-  padding: 2px;
-  background-color: $red;
-  display: table;
+      padding: 5px;
+      background-color: $red;
+      display: table;
 }
 
 #error_explanation {
-  width: 450px;
-  border: 2px solid $red;
-  border-radius: 5px;
-  padding: 7px;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
-  /*background-color: $violet;*/
-  font-size: 16px;
-  h2 {
+    float: left;
+    clear: left;
+    width: 500px;
+    border-radius: 5px;
+    padding: 7px;
+    /*padding-bottom: 5px;*/
+    margin-bottom: 20px;
     text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px;
-    margin-bottom: 0px;
     background-color: $red;
-    color: #fff;
-  }
-  ul li {
-    font-size: 12px;
-    list-style: none;
-  }
+    h2 {
+        font-weight: bold;
+        margin-bottom: 3px;
+    }
+    ul li {
+        background-color: rgba( 255, 255, 255, 0.25 );
+        padding: 5px;
+        list-style: none;
+        &:first-child {
+            border-radius: 5px 5px 0 0;
+        }        
+        &:last-child {
+            border-radius: 0 0 5px 5px ;
+        }        
+    }
 }
 
 /**************************
@@ -86,75 +62,95 @@ input {
 **************************/
 
 #banner {
-	background: #75aadb;
-	color: white;
-	width: 97%;
+    box-sizing: border-box;
+	background: $base03;
+    color: $base0;
+	width: 100%;
+    min-width: $min-width;
+    max-width: $max-width;
     height: 2.5em;
-    padding-left: 0.5em;
-    padding-top: 0.25em;
-    padding-right: 0.5em;
-    padding-bottom: 0.25em;
+    font: "Humanist 777", sans-serif;
+    margin: 1.5em auto;
 
-    a {
-        font: "Humanist 777", sans-serif;
-        font-size: small;
-    }
 
     .title {
-        color: inherit;
-        background: inherit;
-        font: "Humanist 777", sans-serif;
         width: 50%;
+        height: 50px;
+        font-size: 2em;
         text-align: left;
         float: left;
-
-        &.apptitle {
-            font: small-caps 40px/40px "Humanist 777", serif;
-            text-align: center;
-        }
+        clear: left;
+    }
+    .login {
+        width: 50%;
+        height: 50px;
+        text-align: right;
+        float: left;
     }
 
     .nav {
-        color: inherit;
-        background: inherit;
-        font: "Humanist 777", sans-serif;
-        width: 50%;
-        font-size: small;       
-        text-align: right;
         float: left;
+        padding: 0.5em 0.5em 0.5em 0.5em;
+        margin-right: 0.25em;
+        text-align: left;
+        border: 3px solid $base02;
+        border-radius: 10px;
+        background-color: $base02;
+        &.current {
+            background-color: $base01;
+            border: 3px solid $base01;
+        }   
+        &.env {
+            float: right;
+            &.current {
+                background-color: $base01;
+                border: 3px solid $base01;
+            }       
+        }
+        :first-child {
+            clear: left;
+        }
     }
 }
 
 #main  {
 	padding: 1em;
-	background: #EAF3FA;
-	/*width: 100%;*/
-	float: left;
+	background: $base03;
+    background-color: $base02;
+    border-radius: 10px;
+    text-align: center;
+    overflow: auto;
+
+    width: 100%;
+    min-width: $min-width;
+    max-width: $max-width;
+
+    margin: 4em auto 1.5em;
 }
 
 #footer {
-	background: #75aadb;
-	font: small-caps "Humanist 777", serif;
+	background: $base03;
 	font-size: small;
-	color: white;
+	color: $base0;
 	text-align: center;
-	vertical-align: middle;
-	width: 97%;
+    font: "Humanist 777", sans-serif;
 
-	position: fixed;
-	left: 0px;
-	bottom: 0px;
+    width: 100%;
+    min-width: $min-width;
+    max-width: $max-width;
+
+    margin: 1.5em auto;
 }
 
 .notice {
-	color: $base02; 
+	color: $base03; 
 	border: 1px solid $base03;
     border-radius: 10px;
 	padding: 1em;
 	margin-bottom: 2em;
-	background-color: $base3;
+	background-color: $base1;
 	font: bold smaller sans-serif;
-	width: 50%;
+	width: 500px;
 }
 
 .alert {
@@ -163,28 +159,44 @@ input {
     border-radius: 10px;
     padding: 1em;
     margin-bottom: 2em;
-    background-color: $base3;
+    background-color: $base1;
     font: bold smaller sans-serif;
-    width: 50%;        
+    width: 500px;        
 }
 
 /**************************
 *       FORM FIELDS       *
 **************************/
-.field {
-    /*border: 2px solid #75aadb;*/
+#form {
+    text-align: left;
+    float: left;
     width: 100%;
-    margin-bottom: 2em;
+    color: $base0;
+    display: inline-block;  
+    &.field_title {
+        width: 100%;
+        clear: left;
+    }
+    &.field {
+        width: 100%;
+        margin-bottom: 50em;
+        float: right;
+    }
 }
 
+input[type="text"], input[type="password"], input[type="submit"], textarea , select {
+    color: $base03;
+    background-color: $base0;
+}
 /**************************
 *     TABLES              *
 **************************/
 table, section.table, div.table {
+    float: left;
+    color: $base0;
     border-collapse: collapse;
     border-spacing: 0;
-    /*padding-left: 1em;*/
-    width: 90%;
+    width: 100%;
     caption, .caption {
         border-bottom: 1px;
         display: table-caption;
@@ -201,15 +213,19 @@ table, section.table, div.table {
     a.tr { 
         color: inherit;
         text-decoration: none;
-        &:hover { background-color: #ccc }
+        &:hover { 
+            background-color: #fff;
+            color: complement;
+        }
+        &:not(:last-child) {
+            border-bottom: 1px solid $base0;
+        }
     }
     
     th, .th, td, .td {
-        border-top: 1px solid #ccc;
         display: table-cell;
         padding: .3em 1em;
         text-align: left;
-        /*float: left;*/
         empty-cells: show;
         min-height: 1em;
         max-height: 3em;
@@ -217,50 +233,74 @@ table, section.table, div.table {
         &.number {
           text-align: right;
         }
-        /*&:first-child { padding-left: 0; }*/
-        &:last-child { padding-bottom: 0.5em; }
+/*        &:last-child { 
+            padding-bottom: 0.5em;
+        }*/
     }
 
     thead th, .thead .th {
-		border-top: 2.5px solid #ccc;
-		border-bottom: 2.5px solid #ccc;
+		border-top: 2.5px solid $base0;
+		border-bottom: 1.5px solid $base0;
         display: table-cell;
         font-weight: bold;
     }
 
     tfoot th, .tfoot {
-		border-bottom: 2.5px solid #ccc;
-        display: table-cell;
+		border-bottom: 2.5px solid $base0;
+    }
+
+    /* column widths*/
+    .small {
+        width: 8%;
+    }
+    .medium {
+        width: 11%;
+    }
+    .large {
+        width: 22%;
+    }
+    .removed {
+        text-decoration: line-through;
+    }
+
+}
+
+/**************************
+*     TICKET DISPLAY      *
+**************************/
+.ticket {
+    float: left;
+    clear: left;
+    text-align: left;
+
+    color: $base0;
+    background-color: $base02;
+    border-radius: 15px;
+    padding: 15px;
+    &.data_header{
+        font-weight: bold;
+    }
+    &.data {
+        clear: none;
     }
 }
 
 /**************************
-*     OVERVIEW TICKETS    *
+*     USER display:       *
 **************************/
-.small {
-    width: 8%;
-}
-
-.medium {
-	width: 11%;
-}
-
-.large {
-	width: 22%;
-}
-
-.removed {
-    text-decoration: line-through;
-}
-
-/**************************
-*        DEBUGGING        *
-**************************/
-.debug_dump {
-    clear: both;
+.user {
     float: left;
-    width: 100%;
-    margin-top: 2em;
-    box-sizing: border-box;
-}
+    clear: left;
+    text-align: left;
 
+    color: $base0;
+    background-color: $base02;
+    border-radius: 15px;
+    padding: 15px;
+    &.data_header{
+        font-weight: bold;
+    }
+    &.data {
+        clear: none;
+    }
+}

@@ -16,7 +16,7 @@ feature "Session" do
     click_button "Log in"
     expect( page ).to have_css '.alert', text: /Invalid/
 
-    visit overview_path
+    visit tickets_path
     expect( page ).to_not have_css '.alert'
   end
 

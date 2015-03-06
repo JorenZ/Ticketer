@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 		if user && user.authenticate( session_params[:password] )
 			log_in user
 			flash.notice = 'Login successful!'
-			redirect_to overview_path
+			redirect_to ticket_path
 		else
 			flash.now[ :alert ] = 'Invalid email/password combination'
 			render 'new'
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 	def destroy
 		session.delete( :user_id )
 		@current_user = nil
-		redirect_to overview_path
+		redirect_to ticket_path
 	end
 
   private
