@@ -20,17 +20,6 @@ $max-width: 1020px;
     align-items: $arg;
 }
 
-/**************************
-*       PAGE ELEMENTS     *
-**************************/
-body {
-    background-color: $base03;
-}
-
-input {
-    height: auto !important;
-}
-
 /*****************************
 *  ERRORS AND NOTIFICATIONS  *
 ******************************/
@@ -136,7 +125,7 @@ input {
     min-width: $min-width;
     max-width: $max-width;
 
-    margin: 1.5em auto 1.5em;
+    margin: 4em auto 1.5em;
 }
 
 #footer {
@@ -159,9 +148,9 @@ input {
     border-radius: 10px;
 	padding: 1em;
 	margin-bottom: 2em;
-	background-color: $base3;
+	background-color: $base1;
 	font: bold smaller sans-serif;
-	width: 100%;
+	width: 500px;
 }
 
 .alert {
@@ -170,9 +159,9 @@ input {
     border-radius: 10px;
     padding: 1em;
     margin-bottom: 2em;
-    background-color: $base3;
+    background-color: $base1;
     font: bold smaller sans-serif;
-    width: 100%;        
+    width: 500px;        
 }
 
 /**************************
@@ -182,21 +171,23 @@ input {
     text-align: left;
     float: left;
     width: 100%;
-
     color: $base0;
-    display: inline-block;    
-    
+    display: inline-block;  
     &.field_title {
         width: 100%;
-        margin-bottom: 2em;
         clear: left;
     }
     &.field {
         width: 100%;
-        margin-bottom: 5em;
+        margin-bottom: 50em;
+        float: right;
     }
 }
 
+input[type="text"], input[type="password"], input[type="submit"], textarea , select {
+    color: $base03;
+    background-color: $base0;
+}
 /**************************
 *     TABLES              *
 **************************/
