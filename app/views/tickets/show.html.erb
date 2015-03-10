@@ -1,5 +1,17 @@
 <% provide( :title, "Ticket" ) %>
 
-<%= render :partial => "layouts/flash_messages" %>
+<div>
+  <%= render :partial => "layouts/flash_messages" %>
+</div>
 
-<%= render :partial => "ticket" %>
+<div class="ticket actions">
+  <%= link_to "Back", tickets_path %>
+</div>
+
+<div>
+  <%= render :partial => "ticket" %>
+</div>
+
+<div>
+  <%= render :partial => "tickets/ticket_actions", :locals => { :ticket => @ticket } %>
+</div>

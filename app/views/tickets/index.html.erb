@@ -5,24 +5,30 @@
 <div class="table">
   <div class="thead">
     <div class="tr">
+        <div class="th medium">Date</div>
         <div class="th small">Status</div>
-        <div class="th small">Date</div>
-        <div class="th small">Topic</div>
-        <div class="th large">Body</div>
         <div class="th small">Assignment Status</div>
         <div class="th medium">Assigned Programmer</div>
+        <div class="th small">Topic</div>
+        <div class="th large">Body</div>
     </div>
   </div>
   
   <div class="tbody">
       <% @tickets.each do |ticket| %>
           <a class="tr" href="<%= ticket_path( :id => ticket.id ) %>">
-              <div class="td"><%= ticket.status %></div>
-              <div class="td"><%= ticket.created_at.to_date %></div>
-              <div class="td"><%= ticket.topic %></div>
-              <div class="td"><%= sanitize( ticket.body ) %></div>
-              <div class="td"><%= ticket.assignment_status %></div>
-              <div class="td"><%= render :partial => "tickets/ticket_users", :locals => { :ticket => ticket } %></div>
+              <% if ticket.status == 'removed' %><div class="td removed"><% else %><div class="td"><% end %>
+                  <%= ticket.created_at.to_date %></div>
+              <% if ticket.status == 'removed' %><div class="td removed"><% else %><div class="td"><% end %>
+                  <%= ticket.status %></div>
+              <% if ticket.status == 'removed' %><div class="td removed"><% else %><div class="td"><% end %>
+                  <%= ticket.assignment_status %></div>
+              <% if ticket.status == 'removed' %><div class="td removed"><% else %><div class="td"><% end %>
+                  <%= render :partial => "tickets/ticket_users", :locals => { :ticket => ticket } %></div>
+              <% if ticket.status == 'removed' %><div class="td removed"><% else %><div class="td"><% end %>
+                  <%= ticket.topic %></div>
+              <% if ticket.status == 'removed' %><div class="td removed"><% else %><div class="td"><% end %>
+                  <%= sanitize( ticket.body ) %></div>
           </a>
       <% end %>
   </div>

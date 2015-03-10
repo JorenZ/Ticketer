@@ -1,5 +1,17 @@
 <% provide( :title, "User" ) %>
 
-<%= render :partial => "layouts/flash_messages" %>
+<div>
+  <%= render :partial => "layouts/flash_messages" %>
+</div>
 
-<%= render :partial => "user" %>
+<div class="user actions">
+  <%= link_to "Back", users_path %>
+</div>
+
+<div>
+  <%= render :partial => "user" %>
+</div>
+
+<div>
+  <%= render :partial => "users/user_actions", :locals => { :user => @user } %>
+</div>

@@ -1,7 +1,11 @@
 Ticketer::Application.routes.draw do
-  resources :tickets
-  put 'close' => 'tickets#update'
-  put 'remove' => 'tickets#update'
+  resources :tickets do
+    member do
+      put 'close'
+      put 'remove'
+      put 'reopen'
+    end
+  end
 
   resources :users
   get 'signup' => 'users#new'
