@@ -85,8 +85,12 @@ $max-width: 1020px;
         width: 50%;
         height: 50px;
         text-align: right;
+        font-size: smaller;
         float: left;
         vertical-align: bottom;
+        a {
+            text-decoration: underline;  
+        }
     }
 
     .nav {
@@ -144,7 +148,9 @@ $max-width: 1020px;
 }
 
 .notice {
-	color: $base03; 
+	float: left;
+    clear: both;
+    color: $base03; 
 	border: 1px solid $base03;
     border-radius: 10px;
 	padding: 1em;
@@ -155,6 +161,8 @@ $max-width: 1020px;
 }
 
 .alert {
+    float: left;
+    clear: both;
     color: $red; 
     border: 1px solid $base03;
     border-radius: 10px;
@@ -237,6 +245,9 @@ table, section.table, div.table {
 /*        &:last-child { 
             padding-bottom: 0.5em;
         }*/
+        &.removed {
+           text-decoration: line-through;
+        }
     }
 
     thead th, .thead .th {
@@ -260,9 +271,6 @@ table, section.table, div.table {
     .large {
         width: 22%;
     }
-    .removed {
-        text-decoration: line-through;
-    }
 
 }
 
@@ -271,18 +279,22 @@ table, section.table, div.table {
 **************************/
 .ticket {
     float: left;
-    clear: left;
+    clear: both;
     text-align: left;
-
+    
     color: $base0;
     background-color: $base02;
     border-radius: 15px;
-    padding: 15px;
-    &.data_header{
-        font-weight: bold;
-    }
+    padding: 20px 0 20px 0;
     &.data {
-        clear: none;
+        &.data header{
+           font-weight: bold;
+        }
+    }
+    &.actions {
+        a {
+            text-decoration: underline;  
+        }
     }
 }
 
@@ -291,17 +303,24 @@ table, section.table, div.table {
 **************************/
 .user {
     float: left;
-    clear: left;
+    clear: both;
     text-align: left;
 
     color: $base0;
     background-color: $base02;
     border-radius: 15px;
-    padding: 15px;
+    padding: 20px 0 20px 0;
     &.data_header{
         font-weight: bold;
     }
     &.data {
-        clear: none;
+        &.data header{
+           font-weight: bold;
+        }
+    }
+    &.actions {
+        a {
+            text-decoration: underline;  
+        }
     }
 }

@@ -1,23 +1,28 @@
 <div class="ticket">
-  <p>
-    <span class="data_header"><b>Topic:</b></span>
+  <div>
+    <span class="data header"><b>Topic:</b></span>
     <span class="data"><%= @ticket.topic %></span>
-  </p>
+  </div>
 
-  <p>
-    <span class="data_header"><b>Body:</b></span>
+  <div>
+    <span class="data header"><b>Body:</b></span>
     <span class="data"><%= @ticket.body %></span>
-  </p>
+  </div>
 
-  <p>
-    <span class="data_header"><b>Status:</b></span>
+  <div>
+    <span class="data header"><b>Status:</b></span>
     <span class="data"><%= @ticket.status %></span>
-  </p>
+  </div>
 
-  <p>
-    <span class="data_header"><b>Assignment status:</b></span>
+  <div>
+    <span class="data header"><b>Assignment status:</b></span>
     <span class="data"><%= @ticket.assignment_status %></span>
-  </p>
+  </div>
 
-  <%= render :partial => "tickets/ticket_actions", :locals => { :ticket => @ticket } %>
+  <% if !@ticket.user_id.blank? %>
+  <div>
+    <span class="data header"><b>Assigned programmer:</b></span>
+    <span class="data"><%= @ticket.user.name %></span>
+  </div>
+  <% end %>
 </div>

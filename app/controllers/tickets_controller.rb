@@ -21,7 +21,7 @@ class TicketsController < ApplicationController
  
     respond_to do |format|
       if @ticket.save
-        format.html { redirect_to @ticket, notice: 'Ticket was successfully created.' }
+        format.html { redirect_to @ticket, notice: 'Ticket created.' }
       else
         format.html { render action: "new" }
       end
@@ -33,24 +33,48 @@ class TicketsController < ApplicationController
 
     respond_to do |format|
       if @ticket.update_attributes( params[:ticket] )
-        format.html { redirect_to @ticket, notice: 'Ticket was successfully updated.' }
+        format.html { redirect_to @ticket, notice: 'Ticket updated.' }
       else
         format.html { render action: "edit" }
       end
     end
   end
 
-  # def close
-  #   @ticket = Ticket.find( params[:id] )
+  def close
+    @ticket = Ticket.find( params[:id] )
 
-  #   respond_to do |format|
-  #     if @ticket.update_attributes( params[:ticket] )
-  #       format.html { redirect_to @ticket, notice: 'Ticket was successfully updated.' }
-  #     else
-  #       format.html { render action: "show" }
-  #     end
-  #   end
-  # end
+    respond_to do |format|
+      if @ticket.update_attributes( :status => 'closed' )
+        format.html { redirect_to @ticket, notice: 'Ticket closed.' }
+      else
+        format.html { render action: "show" }
+      end
+    end
+  end
+
+  def remove
+    @ticket = Ticket.find( params[:id] )
+
+    respond_to do |format|
+      if @ticket.update_attributes( :status => 'removed' )
+        format.html { redirect_to @ticket, notice: 'Ticket removed.' }
+      else
+        format.html { render action: "show" }
+      end
+    end
+  end
+
+  def reopen
+    @ticket = Ticket.find( params[:id] )
+
+    respond_to do |format|
+      if @ticket.update_attributes( :status => 'open' )
+        format.html { redirect_to @ticket, notice: 'Ticket reopened.' }
+      else
+        format.html { render action: "show" }
+      end
+    end
+  end
 
   private
 

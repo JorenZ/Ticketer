@@ -10,17 +10,18 @@ class Ticket < ActiveRecord::Base
   belongs_to :user
 
 # Possible ticket states:
-# open (after creation), 
-# closed (after marking as such by assigned user, only open tickets can be closed), 
-# removed (after marking as such by administator, all tickets can be removed)
+#   open (after creation)
+#   closed (only open tickets can be closed; only by programmers/administrators)
+#   removed (all tickets can be removed; only by programmers/administrators)
+#   reopen (all tickets can be reopened; only by programmers/administrators)
 state_machine :status, :initial => :open do
-
-  event :remove do
-    transition any => :removed
-  end
 
   event :close do
     transition :open => :closed
+  end
+
+  event :remove do
+    transition any => :removed
   end
 
   event :reopen do
@@ -57,7 +58,6 @@ end
 def reopen
   self.open
 end
-
 
 private 
 
