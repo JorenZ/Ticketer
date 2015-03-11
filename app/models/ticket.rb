@@ -5,7 +5,8 @@ class Ticket < ActiveRecord::Base
 
   validates_presence_of :topic, :body
   validates :topic, :inclusion => { :in => %w(Management Finance Afsprakenbureau) }
-  
+  validate :validate_user_role
+
   belongs_to :user
 
 # Possible ticket states:
