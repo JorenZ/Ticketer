@@ -13,7 +13,7 @@ class TicketsController < ApplicationController
   end
 
   def edit
-    @ticket = Ticket.find(params[:id])
+    @ticket = Ticket.find( params[:id] )
   end
 
   def create
@@ -30,48 +30,24 @@ class TicketsController < ApplicationController
 
   def update
     @ticket = Ticket.find( params[:id] )
+    @event = params[:event].blank? ? nil : params[:event].to_sym
+
+    case @event
+      when :open, :reopen, :close, :remove
+        @ticket.send(@event)
+        @ticket.save
+      else
+        new_attributes = params[:ticket]
+        @ticket.attributes = new_attributes
+    end
 
     respond_to do |format|
-      if @ticket.update_attributes( params[:ticket] )
-        format.html { redirect_to @ticket, notice: 'Ticket updated.' }
-      else
+      if @event.nil? && @ticket.save
+        format.html { redirect_to @ticket, notice: "Ticket updated" }
+      elsif @ticket.save
+        format.html { redirect_to @ticket, notice: "Ticket status updated" }
+      else        
         format.html { render action: "edit" }
-      end
-    end
-  end
-
-  def close
-    @ticket = Ticket.find( params[:id] )
-
-    respond_to do |format|
-      if @ticket.update_attributes( :status => 'closed' )
-        format.html { redirect_to @ticket, notice: 'Ticket closed.' }
-      else
-        format.html { render action: "show" }
-      end
-    end
-  end
-
-  def remove
-    @ticket = Ticket.find( params[:id] )
-
-    respond_to do |format|
-      if @ticket.update_attributes( :status => 'removed' )
-        format.html { redirect_to @ticket, notice: 'Ticket removed.' }
-      else
-        format.html { render action: "show" }
-      end
-    end
-  end
-
-  def reopen
-    @ticket = Ticket.find( params[:id] )
-
-    respond_to do |format|
-      if @ticket.update_attributes( :status => 'open' )
-        format.html { redirect_to @ticket, notice: 'Ticket reopened.' }
-      else
-        format.html { render action: "show" }
       end
     end
   end

@@ -5,8 +5,7 @@ class Ticket < ActiveRecord::Base
 
   validates_presence_of :topic, :body
   validates :topic, :inclusion => { :in => %w(Management Finance Afsprakenbureau) }
-  # validate :validate_user_role
-
+  
   belongs_to :user
 
 # Possible ticket states:
@@ -15,7 +14,6 @@ class Ticket < ActiveRecord::Base
 #   removed (all tickets can be removed; only by programmers/administrators)
 #   reopen (all tickets can be reopened; only by programmers/administrators)
 state_machine :status, :initial => :open do
-
   event :close do
     transition :open => :closed
   end
@@ -47,16 +45,10 @@ state_machine :status, :initial => :open do
   end
 end
 
-def remove
-  self.remove
-end
-
-def close
-  self.close
-end
-
-def reopen
-  self.open
+# required for state_machine
+def initialize
+  @status = 'open'
+  super()
 end
 
 private 
@@ -67,8 +59,8 @@ def validate_user_role
   elsif [ 'Programmer', 'Administrator' ].include?(self.user.role)
     return true
   else
-    return false
     self.errors.add( :user, "role must be either programmer or administrator" )
+    return false
   end
 end
 
