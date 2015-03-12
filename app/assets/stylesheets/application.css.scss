@@ -133,6 +133,14 @@ $max-width: 1020px;
     margin: 4em auto 1.5em;
 }
 
+.previous_page, .previous, .current, .next, .next_page {
+    color: $base0;
+    text-align: center;
+    &.disabled {
+        color: rgba( 255, 255, 255, 0.25 );
+    }
+}
+
 #footer {
 	background: $base03;
 	font-size: small;
@@ -170,7 +178,7 @@ $max-width: 1020px;
     margin-bottom: 2em;
     background-color: $base1;
     font: bold smaller sans-serif;
-    width: 500px;        
+    width: 500px;     
 }
 
 /**************************
@@ -191,6 +199,33 @@ $max-width: 1020px;
         margin-bottom: 50em;
         float: right;
     }
+}
+
+#search {
+    text-align: left;
+    width: 100%;
+    color: $base0;
+    padding: 10px 0 20px 10px;
+    &.field_title {
+        width: 100%;
+        clear: left;
+    }
+    &.field {
+        width: 100%;
+    }    
+}
+
+#filter {
+    text-align: left;
+    width: 100%;
+    color: $base0;
+    padding: 10px 0 20px 10px;
+    &.field_title {
+        width: 100%;
+    }
+    &.field {
+        width: 100%;
+    }    
 }
 
 input[type="text"], input[type="password"], input[type="submit"], textarea , select {

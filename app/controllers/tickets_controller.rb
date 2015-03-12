@@ -1,7 +1,16 @@
 class TicketsController < ApplicationController
 
-  def index
-    @tickets = Ticket.paginate page: params[ :page ], order: [ 'topic asc', 'body asc' ], per_page: 15
+  def index  
+    @current_query = params[:q]
+    @ticket_search = Ticket.ransack( params[:q] )
+    
+    @tickets = @ticket_search.result.includes( :user ).paginate page: params[ :page ], order: [ 'topic asc', 'body asc' ], per_page: 15
+  end
+
+  # since searches use HTTP POST instead of HTTP GET
+  def search
+    index
+    render :index
   end
 
   def show

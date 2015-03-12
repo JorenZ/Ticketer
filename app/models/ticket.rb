@@ -8,6 +8,9 @@ class Ticket < ActiveRecord::Base
   
   belongs_to :user
 
+  scope :status, lambda { |status| where("tickets.status = ?", status) if status.present? }
+  scope :assignment_status, lambda { |asst| where("tickets.assignment_status = ?", asst) if asst.present? }
+
 # Possible ticket states:
 #   open (after creation)
 #   closed (only open tickets can be closed; only by programmers/administrators)
@@ -43,12 +46,6 @@ state_machine :status, :initial => :open do
     validates :topic, :inclusion => { :in => %w(Management Finance Afsprakenbureau) }
     validate :validate_user_role      
   end
-end
-
-# required for state_machine
-def initialize
-  @status = 'open'
-  super()
 end
 
 private 

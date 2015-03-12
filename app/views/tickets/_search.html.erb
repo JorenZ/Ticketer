@@ -1,0 +1,17 @@
+<%= search_form_for @ticket_search do |f| %>
+  <div id="search">
+    <span class="field_title">Ticket search:</span>
+    <span class="field"><%= f.search_field :body_or_user_name_cont %></span>
+    <span>Current query '<% @current_query[:body_or_user_name_cont] %>'</span>
+
+    <span class="field_title">Status:</span>
+    <span>(currently '<% @current_query[:status_eq] %>')</span>
+    <span class="field"><% f.select :status_eq, status_options %></span>
+
+    <span class="field_title">Assignment:</span>
+    <span>(currently '<% @current_query[:assignment_status_eq] %>')</span>
+    <span class="field"><% f.select :assignment_status_eq, assignment_status_options %></span>
+
+    <span class="action"><%= f.submit %></span>
+  </div>
+<% end %>
