@@ -30,6 +30,11 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.3)
     bcrypt-ruby (3.0.1)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.0.4)
     capybara (2.4.4)
       mime-types (>= 1.16)
@@ -37,6 +42,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    coderay (1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -46,6 +52,7 @@ GEM
     coffee-script-source (1.8.0)
     daemons (1.1.9)
     database_cleaner (1.3.0)
+    debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     eventmachine (1.0.3)
@@ -75,6 +82,8 @@ GEM
       pg
       rails (~> 3.1)
       rspec-rails
+    polyamorous (1.1.0)
+      activerecord (>= 3.0)
     polyglot (0.3.5)
     rack (1.4.5)
     rack-cache (1.2)
@@ -99,6 +108,12 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (10.3.2)
+    ransack (1.6.3)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.1)
     rdoc (3.12.2)
       json (~> 1.4)
     rspec-core (3.0.4)
@@ -156,6 +171,8 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
+  better_errors
+  binding_of_caller
   capybara
   coffee-rails (~> 3.2.1)
   database_cleaner
@@ -165,6 +182,7 @@ DEPENDENCIES
   pg (~> 0.15)
   pg_power (= 1.3.1)
   rails (= 3.2.13)
+  ransack
   rspec-rails (~> 3.0.0)
   ruby-prof
   sass-rails (~> 3.2.3)
