@@ -45,7 +45,8 @@
   </div>
 
   <div>
-    <%#= will_paginate @tickets %>
+    <div class="will_paginate"><%= page_entries_info @tickets %></div>
+    <div class="will_paginate"><%= will_paginate @tickets %></div>
   </div>
 <% else %>
   <div class="notice">No tickets found with these criteria!</div>          

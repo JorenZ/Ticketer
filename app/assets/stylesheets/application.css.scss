@@ -131,15 +131,17 @@ $max-width: 1020px;
     max-width: $max-width;
 
     margin: 4em auto 1.5em;
-}
 
-.previous_page, .previous, .current, .next, .next_page {
-    color: $base0;
-    text-align: center;
-    &.disabled {
+    .will_paginate {
         color: rgba( 255, 255, 255, 0.25 );
+        .previous_page, .previous, .current, .next, .next_page {
+            &.disabled {
+                color: rgba( 255, 255, 255, 0.25 );
+            }
+        }
     }
 }
+
 
 #footer {
 	background: $base03;
