@@ -2,8 +2,17 @@ class TicketsController < ApplicationController
 
   def index  
     @current_query = params[:q]
+
+    # set the filters to include all tickets when the 'all' selection is in effect
+    if @current_query
+      @current_status_filter = ( @current_query[:status_cont_any].nil? ? nil : @current_query[:status_cont_any] )
+      @current_assignment_status_filter = ( @current_query[:assignment_status_cont_any].nil? ? nil : @current_query[:assignment_status_cont_any] )
+
+      @current_query[:status_cont_any] = Ticket::ALL_STATUSES if @current_query[:status_cont_any] == 'all'
+      @current_query[:assignment_status_cont_any] = Ticket::ALL_ASSIGNMENT_STATUSES if @current_query[:assignment_status_cont_any] == 'all'
+    end
+
     @ticket_search = Ticket.ransack( params[:q] )
-    
     @tickets = @ticket_search.result.includes( :user ).paginate page: params[ :page ], order: [ 'topic asc', 'body asc' ], per_page: 15
   end
 

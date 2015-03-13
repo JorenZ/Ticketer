@@ -21,7 +21,10 @@ gem 'ransack'
 gem 'thin'
 gem 'i18n'
 gem 'state_machine'
+
 gem 'better_errors'
+gem 'binding_of_caller'
+
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 

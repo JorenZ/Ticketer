@@ -11,6 +11,10 @@ class Ticket < ActiveRecord::Base
   scope :status, lambda { |status| where("tickets.status = ?", status) if status.present? }
   scope :assignment_status, lambda { |asst| where("tickets.assignment_status = ?", asst) if asst.present? }
 
+
+  ALL_STATUSES = %w{ open closed removed }
+  ALL_ASSIGNMENT_STATUSES = %w{ assigned unassigned }
+  
 # Possible ticket states:
 #   open (after creation)
 #   closed (only open tickets can be closed; only by programmers/administrators)
