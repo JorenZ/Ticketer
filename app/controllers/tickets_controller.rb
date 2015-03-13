@@ -5,15 +5,16 @@ class TicketsController < ApplicationController
 
     # set the filters to include all tickets when the 'all' selection is in effect
     if @current_query
-      @current_status_filter = ( @current_query[:status_cont_any].nil? ? nil : @current_query[:status_cont_any] )
-      @current_assignment_status_filter = ( @current_query[:assignment_status_cont_any].nil? ? nil : @current_query[:assignment_status_cont_any] )
+      @current_status_filter = ( @current_query[:status_in].nil? ? nil : @current_query[:status_in] )
+      @current_assignment_status_filter = ( @current_query[:assignment_status_in].nil? ? nil : @current_query[:assignment_status_in] )
 
-      @current_query[:status_cont_any] = Ticket::ALL_STATUSES if @current_query[:status_cont_any] == 'all'
-      @current_query[:assignment_status_cont_any] = Ticket::ALL_ASSIGNMENT_STATUSES if @current_query[:assignment_status_cont_any] == 'all'
+      @current_query[:status_in] = Ticket::ALL_STATUSES if @current_query[:status_in] == 'all'
+      @current_query[:assignment_status_in] = Ticket::ALL_ASSIGNMENT_STATUSES if @current_query[:assignment_status_in] == 'all'
     end
 
     @ticket_search = Ticket.ransack( params[:q] )
-    @tickets = @ticket_search.result.includes( :user ).paginate page: params[ :page ], order: [ 'topic asc', 'body asc' ], per_page: 15
+    @tickets = @ticket_search.result.includes( :user )
+    @tickets.paginate page: params[ :page ], order: [ 'topic asc', 'body asc' ], per_page: 15
   end
 
   # since searches use HTTP POST instead of HTTP GET

@@ -18,17 +18,23 @@
   </div>
   
   <div class="tbody">
-      <% @tickets.each do |ticket| %>
-          <a class="tr" href="<%= ticket_path( :id => ticket.id ) %>">
-              <!-- <%# if ticket.status == 'removed' %><div class="td removed"><%# else %><div class="td"><%# end %>  -->
-              <div class="td"><%= ticket.id %></div>
-              <div class="td"><%= ticket.created_at.to_date %></div>
-              <div class="td"><%= ticket.status %></div>
-              <div class="td"><%= ticket.assignment_status %></div>
-              <div class="td"><%= render :partial => "tickets/ticket_users", :locals => { :ticket => ticket } %></div>
-              <div class="td"><%= ticket.topic %></div>
-              <div class="td"><%= sanitize( ticket.body ) %></div>
-          </a>
+      <% if !@tickets.nil? %>
+        <% @tickets.each do |ticket| %>
+            <a class="tr" href="<%= ticket_path( :id => ticket.id ) %>">
+                <!-- <%# if ticket.status == 'removed' %><div class="td removed"><%# else %><div class="td"><%# end %>  -->
+                <div class="td"><%= ticket.id %></div>
+                <div class="td"><%= ticket.created_at.to_date %></div>
+                <div class="td"><%= ticket.status %></div>
+                <div class="td"><%= ticket.assignment_status %></div>
+                <div class="td"><%= render :partial => "tickets/ticket_users", :locals => { :ticket => ticket } %></div>
+                <div class="td"><%= ticket.topic %></div>
+                <div class="td"><%= sanitize( ticket.body ) %></div>
+            </a>
+        <% end %>
+      <% else %>
+        <div class="tr">
+          <div class="td">No tickets found with these criteria!</div>          
+        </div>
       <% end %>
   </div>
 
@@ -44,5 +50,5 @@
 </div>
 
 <div>
-  <%= will_paginate @tickets %>
+  <%#= will_paginate @tickets %>
 </div>
