@@ -14,7 +14,7 @@ class TicketsController < ApplicationController
 
     @ticket_search = Ticket.ransack( params[:q] )
     @tickets = @ticket_search.result.includes( :user )
-    @tickets = @tickets.paginate page: params[ :page ], order: [ 'topic asc', 'body asc' ], per_page: 15
+    @tickets = @tickets.paginate page: params[ :page ]
   end
 
   # when searches use HTTP POST instead of HTTP GET
