@@ -4,21 +4,21 @@
 
 <%= render :partial => "tickets/search" %>
 
-<div class="table">
-  <div class="thead">
-    <div class="tr">
-        <div class="th small">Number</div>
-        <div class="th medium">Date</div>
-        <div class="th small">Status</div>
-        <div class="th small">Assignment</div>
-        <div class="th medium">Assigned Programmer</div>
-        <div class="th small">Topic</div>
-        <div class="th large">Body</div>
+<% if !@tickets.blank? %>
+  <div class="table">
+    <div class="thead">
+      <div class="tr">
+          <div class="th small">Number</div>
+          <div class="th medium">Date</div>
+          <div class="th small">Status</div>
+          <div class="th small">Assignment</div>
+          <div class="th medium">Assigned Programmer</div>
+          <div class="th small">Topic</div>
+          <div class="th large">Body</div>
+      </div>
     </div>
-  </div>
-  
-  <div class="tbody">
-      <% if !@tickets.nil? %>
+    
+    <div class="tbody">
         <% @tickets.each do |ticket| %>
             <a class="tr" href="<%= ticket_path( :id => ticket.id ) %>">
                 <!-- <%# if ticket.status == 'removed' %><div class="td removed"><%# else %><div class="td"><%# end %>  -->
@@ -31,24 +31,22 @@
                 <div class="td"><%= sanitize( ticket.body ) %></div>
             </a>
         <% end %>
-      <% else %>
-        <div class="tr">
-          <div class="td">No tickets found with these criteria!</div>          
-        </div>
-      <% end %>
+    </div>
+
+    <div class="tfoot">
+        <div class="th"></div>
+        <div class="th"></div>
+        <div class="th"></div>
+        <div class="th"></div>
+        <div class="th"></div>
+        <div class="th"></div>
+        <div class="th"></div>
+    </div>
   </div>
 
-  <div class="tfoot">
-      <div class="th"></div>
-      <div class="th"></div>
-      <div class="th"></div>
-      <div class="th"></div>
-      <div class="th"></div>
-      <div class="th"></div>
-      <div class="th"></div>
+  <div>
+    <%#= will_paginate @tickets %>
   </div>
-</div>
-
-<div>
-  <%#= will_paginate @tickets %>
-</div>
+<% else %>
+  <div class="notice">No tickets found with these criteria!</div>          
+<% end %>
