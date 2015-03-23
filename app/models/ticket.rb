@@ -4,7 +4,7 @@ class Ticket < ActiveRecord::Base
   attr_accessible :body, :status, :topic, :user_id, :assignment_status
 
   validates_presence_of :topic, :body
-  validates :topic, :inclusion => { :in => %w(Management Finance Afsprakenbureau) }
+  validates :topic, :inclusion => { :in => %w(Management Finance Callcenter) }
   validate :validate_user_role
 
   belongs_to :user
@@ -36,19 +36,19 @@ state_machine :status, :initial => :open do
 
   state :open do
     validates_presence_of :topic, :body
-    validates :topic, :inclusion => { :in => %w(Management Finance Afsprakenbureau) }
+    validates :topic, :inclusion => { :in => %w(Management Finance Callcenter) }
     validate :validate_user_role      
   end
 
   state :closed do
     validates_presence_of :topic, :body
-    validates :topic, :inclusion => { :in => %w(Management Finance Afsprakenbureau) }
+    validates :topic, :inclusion => { :in => %w(Management Finance Callcenter) }
     validate :validate_user_role      
   end
 
   state :removed do
     validates_presence_of :topic, :body
-    validates :topic, :inclusion => { :in => %w(Management Finance Afsprakenbureau) }
+    validates :topic, :inclusion => { :in => %w(Management Finance Callcenter) }
     validate :validate_user_role      
   end
 end

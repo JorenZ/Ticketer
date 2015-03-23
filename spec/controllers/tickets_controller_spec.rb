@@ -5,7 +5,7 @@ describe TicketsController do
   before do
     @ticket1 = FactoryGirl.create :ticket, :management
     @ticket2 = FactoryGirl.create :ticket, :finance
-    @ticket3 = FactoryGirl.create :ticket, :afsprakenbureau
+    @ticket3 = FactoryGirl.create :ticket, :callcenter
   end
 
   it "should get index" do

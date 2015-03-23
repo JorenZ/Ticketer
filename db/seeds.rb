@@ -13,7 +13,7 @@ Ticket.create(
 	body: 'Seed-ticket #1')
 
 Ticket.create(
-	topic: 'Afsprakenbureau',
+	topic: 'Callcenter',
 	body: 'Seed-ticket number two...')
 
 User.create(
