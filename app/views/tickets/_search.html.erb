@@ -1,5 +1,7 @@
 <%= search_form_for @ticket_search do |f| %>
   <div id="search">
+    <span><%= f.hidden_field :s, :value => @current_sort.nil? ? nil : @current_sort %></span>
+
     <span class="field_title">Ticket search:</span>
     <span class="field"><%= f.search_field :body_or_user_name_cont %></span>
 
