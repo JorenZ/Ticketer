@@ -22,16 +22,16 @@ describe Ticket do
 
   it "should have a topic that is in the allowed topic options" do
     @ticket1.topic = 'onzin'
-    assert !@ticket1.valid? , "Invalid topic option is somehow allowed"
+    assert !@ticket1.valid? , "Invalid topic option #{ @ticket1.topic } is somehow allowed"
     
-    @ticket1.topic = 'Afsprakenbureau'
-    assert @ticket1.valid? , "Valid topic option is somehow not allowed"
+    @ticket1.topic = 'Callcenter'
+    assert @ticket1.valid? , "Valid topic option #{ @ticket1.topic } is somehow not allowed"
     
     @ticket1.topic = 'Management'
-    assert @ticket1.valid? , "Valid topic option is somehow not allowed"
+    assert @ticket1.valid? , "Valid topic option #{ @ticket1.topic } is somehow not allowed"
     
     @ticket1.topic = 'Finance'
-    assert @ticket1.valid? , "Valid topic option is somehow not allowed"
+    assert @ticket1.valid? , "Valid topic option #{ @ticket1.topic } is somehow not allowed"
   end
 
   it "should only allow users with the correct role" do
