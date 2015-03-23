@@ -11,9 +11,9 @@ FactoryGirl.define do
     body 'Factory-created management ticket'
   end
 
-  trait :afsprakenbureau do
+  trait :callcenter do
     topic 'Afsprakenbureau'
-    body 'Factory-created afsprakenbureau ticket'
+    body 'Factory-created callcenter ticket'
   end
 
   trait :finance do

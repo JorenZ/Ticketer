@@ -1,7 +1,7 @@
 module TicketsHelper
 
   def topic_options
-		[ 'Management', 'Finance', 'Afsprakenbureau' ]
+		[ 'Management', 'Finance', 'Callcenter' ]
   end
 
   def user_options
