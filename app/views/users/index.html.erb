@@ -5,8 +5,8 @@
 <div class="table">
   <div class="thead">
     <div class="tr">
-        <div class="th small">Name</div>
-        <div class="th small">Role</div>
+        <div class="th small"><%= sort_link @search, :name  %></div>
+        <div class="th small"><%= sort_link @search, :role  %></div>
         <div class="th small">Email</div>
     </div>
   </div>
@@ -26,4 +26,9 @@
       <div class="th"></div>
       <div class="th"></div>
   </div>
+
+  <div>
+    <div class="will_paginate"><%= page_entries_info @users %></div>
+    <div class="will_paginate"><%= will_paginate @users %></div>
+  </div>  
 </div>

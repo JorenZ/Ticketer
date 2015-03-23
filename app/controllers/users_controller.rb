@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    @search = User.ransack( params[:q] )  
+    @users = @search.result.paginate page: params[:page] 
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find( params[:id] )
   end
 
   def new
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find( params[:id] )
   end
 
   def create

@@ -3,16 +3,22 @@ class TicketsController < ApplicationController
   def index  
     @current_query = params[:q]
 
-    # set the filters to include all tickets when the 'all' selection is in effect
     if @current_query
-      @current_status_filter = ( @current_query[:status_in].nil? ? nil : @current_query[:status_in] )
-      @current_assignment_status_filter = ( @current_query[:assignment_status_in].nil? ? nil : @current_query[:assignment_status_in] )
+      # if applicable, set the filter to 'all' if it is currently ALL_STATUSES
+      @current_query[:status_in] = 'all'            if @current_query[:status_in] == Ticket::ALL_STATUSES
+      @current_query[:assignment_status_in] = 'all' if @current_query[:assignment_status_in] == Ticket::ALL_ASSIGNMENT_STATUSES
 
-      @current_query[:status_in] = Ticket::ALL_STATUSES if @current_query[:status_in] == 'all'
+      # save the currently applied filter for use in the index view
+      @current_status_filter            = ( @current_query[:status_in].nil? ? nil : @current_query[:status_in] )
+      @current_assignment_status_filter = ( @current_query[:assignment_status_in].nil? ? nil : @current_query[:assignment_status_in] )
+      @current_sort                     = ( @current_query[:s].nil? ? nil : @current_query[:s])
+
+      # if applicable, reset actual filter to ALL_STATUSES instead of the string 'all'
+      @current_query[:status_in] = Ticket::ALL_STATUSES                       if @current_query[:status_in] == 'all'
       @current_query[:assignment_status_in] = Ticket::ALL_ASSIGNMENT_STATUSES if @current_query[:assignment_status_in] == 'all'
     end
 
-    @ticket_search = Ticket.ransack( params[:q] )
+    @ticket_search = Ticket.ransack( @current_query )
     @tickets = @ticket_search.result.includes( :user )
     @tickets = @tickets.paginate page: params[ :page ]
   end
