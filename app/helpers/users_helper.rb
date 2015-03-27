@@ -1,7 +1,7 @@
 module UsersHelper
 
 def roles
-		[ 'User', 'Programmer', 'Administrator' ]
+		[ t(:user), t(:programmer), t(:administrator) ]
 end
 
 end

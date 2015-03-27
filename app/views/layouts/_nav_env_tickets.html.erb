@@ -1,7 +1,6 @@
 <!-- Careful: these items are showing from right to left in the application (float right) -->
 <% if ['^/tickets/new'].any? { |p| request.fullpath =~ Regexp.new(p) } %>
-  <%= nav_env_item 'Back', tickets_path %>
+  <%= nav_env_item t( :back ), tickets_path %>
 <% else %>
-  <%= nav_env_item 'New Ticket', new_ticket_path %>
-  <%#= nav_env_item 'View Tickets', tickets_path %>
+  <%= nav_env_item t( :new_ticket ), new_ticket_path %>
 <% end %>

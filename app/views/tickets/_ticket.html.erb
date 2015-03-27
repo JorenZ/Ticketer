@@ -1,27 +1,27 @@
 <div class="ticket">
   <div>
-    <span class="data header"><b>Topic:</b></span>
+    <span class="data header"><b><%=t :topic %>:</b></span>
     <span class="data"><%= @ticket.topic %></span>
   </div>
 
   <div>
-    <span class="data header"><b>Body:</b></span>
+    <span class="data header"><b><%=t :body %>:</b></span>
     <span class="data"><%= @ticket.body %></span>
   </div>
 
   <div>
-    <span class="data header"><b>Status:</b></span>
+    <span class="data header"><b><%=t :status %>:</b></span>
     <span class="data"><%= @ticket.status %></span>
   </div>
 
   <div>
-    <span class="data header"><b>Assignment status:</b></span>
+    <span class="data header"><b><%=t :assignment_status %>:</b></span>
     <span class="data"><%= @ticket.assignment_status %></span>
   </div>
 
   <% if !@ticket.user_id.blank? %>
   <div>
-    <span class="data header"><b>Assigned programmer:</b></span>
+    <span class="data header"><b><%=t :assigned_programmer %>:</b></span>
     <span class="data"><%= @ticket.user.name %></span>
   </div>
   <% end %>

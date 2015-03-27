@@ -8,13 +8,13 @@
   <div class="table">
     <div class="thead">
       <div class="tr">
-          <div class="th small"><%= sort_link @ticket_search, :id, 'Number' %></div>
-          <div class="th medium"><%= sort_link @ticket_search, :created_at, 'Date' %></div>
-          <div class="th small"><%= sort_link @ticket_search, :status %></div>
-          <div class="th small"><%= sort_link @ticket_search, :assignment_status, 'Assignment' %></div>
-          <div class="th medium"><%= sort_link @ticket_search, :user_id, 'Assigned Programmer' %></div>
-          <div class="th small"><%= sort_link @ticket_search, :topic %></div>
-          <div class="th large"><%= sort_link @ticket_search, :body %></div>
+          <div class="th small"><%= sort_link @ticket_search, :id, t( :number ) %></div>
+          <div class="th medium"><%= sort_link @ticket_search, :created_at, t( :date ) %></div>
+          <div class="th small"><%= sort_link @ticket_search, :status, t( :status ) %></div>
+          <div class="th small"><%= sort_link @ticket_search, :assignment_status, t( :assignment ) %></div>
+          <div class="th medium"><%= sort_link @ticket_search, :user_id, t( :assigned_programmer ) %></div>
+          <div class="th small"><%= sort_link @ticket_search, :topic, t( :topic ) %></div>
+          <div class="th large"><%= sort_link @ticket_search, :body, t( :body ) %></div>
 
       </div>
     </div>

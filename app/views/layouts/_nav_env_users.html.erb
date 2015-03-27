@@ -1,9 +1,8 @@
 <!-- Careful: these items are showing from right to left in the application (float right) -->
 <% if ['^/users/new'].any? { |p| request.fullpath =~ Regexp.new(p) } %>
-  <%= nav_env_item 'Back', users_path %>
+  <%= nav_env_item t( :back ), users_path %>
 <% else %>
-  <%= nav_env_item 'New User', new_user_path %>
-  <%#= nav_env_item 'View Users', users_path %>
+  <%= nav_env_item t( :new_user ), new_user_path %>
 <% end %>
 
 

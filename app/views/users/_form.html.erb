@@ -1,33 +1,33 @@
 <%= form_for( @user ) do |f| %>
 
   <div id="form">
-    <div class="field_title">Name</div>
+    <div class="field_title"><%=t :name %></div>
     <div class="field">
       <%= f.text_field :name %>
     </div>
 
-    <div class="field_title">Role</div>
+    <div class="field_title"><%=t :role %></div>
     <div class="field">
       <%= f.select :role, roles %>
     </div>
     
-    <div class="field_title">Email</div>
+    <div class="field_title"><%=t :email %></div>
     <div class="field">
       <%= f.text_field :email %>
     </div>  
     
-    <div class="field_title">Password</div>
+    <div class="field_title"><%=t :password %></div>
     <div class="field">
       <%= f.password_field :password %>
     </div>  
     
-    <div class="field_title">Re-type Password</div>
+    <div class="field_title"><%=t :password_retype %></div>
     <div class="field">
       <%= f.password_field :password_confirmation %>
     </div>  
     
     <div style="margin-top: 5em; float: right">
-      <span><%= link_to 'Back', users_path %></span> or <span class="actions"><%= f.submit %></span>
+      <span><%= link_to t( :back ), users_path %><%=t :or %></span> <span class="actions"><%= f.submit %></span>
     </div>
   </div>
 <% end %>

@@ -1,14 +1,14 @@
 <div class="ticket actions">
   <% if @ticket.open? %>
-      <span><%= link_to "Edit ticket", edit_ticket_path %>
-    | <span><%= link_to "Close ticket", ticket_path( :event => :close ), method: :put %></span>
-    | <span><%= link_to "Remove ticket", ticket_path( :event => :remove ), method: :put %></span>
+      <span><%= link_to t( :edit_ticket ), edit_ticket_path %>
+    | <span><%= link_to t( :close_ticket ), ticket_path( :event => :close ), method: :put %></span>
+    | <span><%= link_to t( :remove_ticket ), ticket_path( :event => :remove ), method: :put %></span>
   <% elsif @ticket.closed? %>
-      <span><%= link_to "Edit ticket", edit_ticket_path %></span>
-    | <span><%= link_to "Reopen ticket", ticket_path( :event => :reopen ), method: :put %></span>
-    | <span><%= link_to "Remove ticket", ticket_path( :event => :remove ), method: :put %></span>
+      <span><%= link_to t( :edit_ticket ), edit_ticket_path %></span>
+    | <span><%= link_to t( :reopen_ticket ), ticket_path( :event => :reopen ), method: :put %></span>
+    | <span><%= link_to t( :remove_ticket ), ticket_path( :event => :remove ), method: :put %></span>
   <% elsif @ticket.removed? %>
-      <span><%= link_to "Edit ticket", edit_ticket_path %></span>
-    | <span><%= link_to "Reopen ticket", ticket_path( :event => :reopen ), method: :put %></span>
+      <span><%= link_to t( :edit_ticket ), edit_ticket_path %></span>
+    | <span><%= link_to t( :reopen_ticket ), ticket_path( :event => :reopen ), method: :put %></span>
   <% end %>
 </div>

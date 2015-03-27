@@ -8,10 +8,10 @@ class SessionsController < ApplicationController
 
 		if user && user.authenticate( session_params[:password] )
 			log_in user
-			flash.notice = 'Login successful!'
+			flash.notice = t( :login_succesful )
 			redirect_to tickets_path
 		else
-			flash.now[ :alert ] = 'Invalid email/password combination'
+			flash.now[ :alert ] = t( :invalid_email_password_combination )
 			render 'new'
 		end
 	end

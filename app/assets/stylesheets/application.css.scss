@@ -57,6 +57,12 @@ $max-width: 1020px;
     }
 }
 
+.translation_missing {
+    border: 1px solid $red;
+    color: $red;
+    background-color: $base3;
+}
+
 /**************************
 *  INTERFACE COMPONENTS   *
 **************************/
