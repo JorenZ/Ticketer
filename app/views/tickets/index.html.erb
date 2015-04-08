@@ -11,7 +11,6 @@
           <div class="th small"><%= sort_link @ticket_search, :id, 'Number' %></div>
           <div class="th medium"><%= sort_link @ticket_search, :created_at, 'Date' %></div>
           <div class="th small"><%= sort_link @ticket_search, :status %></div>
-          <div class="th small"><%= sort_link @ticket_search, :assignment_status, 'Assignment' %></div>
           <div class="th medium"><%= sort_link @ticket_search, :user_id, 'Assigned Programmer' %></div>
           <div class="th small"><%= sort_link @ticket_search, :topic %></div>
           <div class="th large"><%= sort_link @ticket_search, :body %></div>
@@ -26,7 +25,6 @@
                 <div class="td"><%= ticket.id %></div>
                 <div class="td"><%= ticket.created_at.to_date %></div>
                 <div class="td"><%= ticket.status %></div>
-                <div class="td"><%= ticket.assignment_status %></div>
                 <div class="td"><%= render :partial => "tickets/ticket_users", :locals => { :ticket => ticket } %></div>
                 <div class="td"><%= ticket.topic %></div>
                 <div class="td"><%= sanitize( ticket.body ) %></div>
@@ -35,7 +33,6 @@
     </div>
 
     <div class="tfoot">
-        <div class="th"></div>
         <div class="th"></div>
         <div class="th"></div>
         <div class="th"></div>
