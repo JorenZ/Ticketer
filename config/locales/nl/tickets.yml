@@ -1,0 +1,11 @@
+---
+nl:
+  tickets:
+    assigned_programmer: "toegewezen programmeur"
+    assignment: toewijzing
+    body: omschrijving
+    date: datum
+    number: nummer
+    status: status
+    ticket_search: "zoek ticket"
+    topic: onderwerp

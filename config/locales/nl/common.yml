@@ -1,0 +1,13 @@
+---
+nl:
+  page_loaded_on: "pagina geladen op"
+  ticketer: ticketer
+  tickets: tickets
+  users: gebruikers
+  will_paginate:
+    next_label: "volgende"
+    page_gap: "..."
+    previous_label: "vorige"
+    page_entries_info:
+      multi_page: "Meerdere paginas"
+      single_page: "Een pagina"
