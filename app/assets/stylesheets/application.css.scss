@@ -198,6 +198,7 @@ $max-width: 1020px;
     width: 100%;
     color: $base0;
     display: inline-block;  
+    background-color: $base02;
     &.field_title {
         width: 100%;
         clear: left;
@@ -236,9 +237,17 @@ $max-width: 1020px;
     }    
 }
 
-input[type="text"], input[type="password"], input[type="submit"], textarea , select {
+input[type="text"], input[type="password"], textarea , select {
     color: $base03;
     background-color: $base0;
+}
+
+input[type="submit"] {
+    float: right;
+    color: $base03;
+    background-color: $base0;
+    border-radius: 0px;
+    padding: 2px;
 }
 /**************************
 *     TABLES              *

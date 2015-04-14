@@ -1,4 +1,4 @@
-<% provide( :title, "User" ) %>
+<% provide( :title, t('show_user', id: @user.id) ) %>
 
 <div>
   <%= render :partial => "layouts/flash_messages" %>

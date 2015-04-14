@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .tickets {
+
 	table {
 		border-collapse: 	collapse;
 	}
@@ -35,9 +36,9 @@
 	}
 
 	.list_actions {
-		font-size: 				x-small;
-		text-align: 			right;
-		padding-left: 			1em;
+		font-size: x-small;
+		text-align: right;
+		padding-left: 1em;
 	}
 
 	.list_line_even {
@@ -50,8 +51,8 @@
 
 	.header {
 		text-align: left;
-		font-weight: 		bold;
-		font-size: 			larger; 
+		font-weight: bold;
+		font-size: larger; 
 	}
 
 }

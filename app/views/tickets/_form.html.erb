@@ -1,24 +1,21 @@
 <%= form_for(@ticket) do |f| %>
+  <div id="form">
+    <div class="field_title"><%=t :topic %>:</div>
+    <div class="field"><%= f.select :topic, topic_options %></div>
+    
+    <div class="field_title"><%=t :ticket_text %>:</div>
+    <div class="field"><%= f.text_area :body, rows: 6 %></div>
 
-<div id="form">
-  <div class="field_title"><%=t :topic %>:</div>
-  <div class="field">
-    <%= f.select :topic, topic_options %>
-  </div>
-  
-  <div class="field_title"><%=t :ticket_text %>:</div>
-  <div class="field">
-    <%= f.text_area :body, rows: 6 %>
-  </div>
+    <div class="field_title"><%=t :assigned_programmer %>:</div>
+    <div class="field"><%= f.select :user_id, user_options, { include_blank: true } %></div>
 
-  <div class="field_title"><%=t :assigned_programmer %>:</div>
-  <div class="field">
-    <%= f.select :user_id, user_options, { include_blank: true } %>
+    <div style="margin-top: 5em; float: right">
+      <div>
+          <%= link_to t( :back ), tickets_path %> 
+          <%=t :or %> 
+          &nbsp;
+          <span class="actions"><%= f.submit class: 'ticket' %></span>
+      </div>
+    </div>
   </div>
-
-  <div style="margin-top: 5em; float: right">
-    <div><%= link_to t( :back ), tickets_path %> <%=t :or %> <span class="actions"><%= f.submit %></span>
-  </div>
-</div>
-
 <% end %>

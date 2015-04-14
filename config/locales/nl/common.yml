@@ -5,9 +5,7 @@ nl:
   page_loaded_on: Pagina geladen op
   ticketer: Ticketer
   tickets: Tickets
-  Tickets: Tickets # controller name translation
   users: Gebruikers
-  Users: Gebruikers # controller name translation
   will_paginate:
       next_label: ">"
       page_gap: "&hellip;"

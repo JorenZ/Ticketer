@@ -2,7 +2,7 @@
 <html>
 
 <header>
-  <title><%=t :ticketer %> | <%=t yield( :title ) %></title>
+  <title><%=t :ticketer %> | <%= yield( :title ) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -12,7 +12,7 @@
 
 	<div id="banner">
 		<div>
-			<span class="title"><%=t :ticketer %>  | <%=t controller_name.to_sym.capitalize %></span>
+			<span class="title"><%=t :ticketer %>  | <%=t controller_name.to_sym %></span>
 			<span class="login">
 				<% if logged_in? %>
 					Logged in as <%= current_user.name %>; <%= link_to "Log out", logout_path, method: "delete" %>

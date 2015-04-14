@@ -6,9 +6,9 @@ nl:
   removed: verwijderd
 
   # Topic options
-  Callcenter: Afsprakenbureau
-  Finance: "Financiën"
-  Management: Management
+  callcenter: afsprakenbureau
+  finance: "financiën"
+  management: management
 
   # User role options
   Administrator: administrator
@@ -23,14 +23,16 @@ nl:
   assigned_programmer: "toegewezen programmeur"
   assignment: toewijzing
   body: omschrijving
-  close_ticket: Sluiten
+  close_ticket_link: sluiten
   create:
     notice: Ticket aangemaakt
-  edit_ticket: Wijzigen
+  edit_ticket: "Ticket %{id} wijzigen"
+  edit_ticket_link: wijzigen
   date: datum
   number: nummer
-  remove_ticket: Verwijderen
-  reopen_ticket: Heropenen
+  remove_ticket_link: verwijderen
+  reopen_ticket_link: heropenen
+  show_ticket: "Ticket %{id}"
   status: status
   status_options:
     all: Alle
@@ -38,7 +40,9 @@ nl:
     closed: Gesloten
     removed: Verwijderd
   ticket_search: "zoek ticket"
-  ticket_text: "omschrijving:"
+  ticket_status_updated: Ticketstatus geüpdatet
+  ticket_text: omschrijving
+  ticket_updated: Ticket geüpdatet
   topic: onderwerp
   topic_options:
     callcenter: Afsprakenbureau

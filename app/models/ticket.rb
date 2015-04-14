@@ -3,9 +3,9 @@ class Ticket < ActiveRecord::Base
   after_save { update_assignment_status }
   attr_accessible :body, :status, :topic, :user_id, :assignment_status
 
-  validates :topic, with: :topic_check
-  validates :body, with: :body_check
-  validate :validate_user_role
+  # validates :topic, with: :topic_check
+  # validates :body, with: :body_check
+  # validate :validate_user_role
 
   belongs_to :user
 
@@ -15,7 +15,7 @@ class Ticket < ActiveRecord::Base
 
   ALL_STATUSES = %w{ open closed removed }
   ALL_ASSIGNMENT_STATUSES = %w{ assigned unassigned }
-  ALL_TOPICS = %w{ Management Finance Callcenter }
+  ALL_TOPICS = %w{ management finance callcenter }
   
 # Possible ticket states:
 #   open (after creation)
@@ -36,8 +36,8 @@ state_machine :status, :initial => :open do
   end
 
   state :open, :closed, :removed do
-    validates_presence_of :topic, :body
-    validates :topic, :inclusion => { :in => %w(Management Finance Callcenter) }
+    validates :topic, with: :topic_check
+    validates :body, with: :body_check
     validate :validate_user_role      
   end
 end

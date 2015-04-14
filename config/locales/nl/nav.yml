@@ -1,7 +1,7 @@
 ---
 nl:
     log_in: "log in"
-    tickets: "tickets"
-    users: "gebruikers"
-    new_ticket: "nieuw ticket"
-    new_user: "nieuwe gebruiker"
+    tickets: Tickets
+    users: Gebruikers
+    new_ticket: "Nieuw ticket"
+    new_user: "Nieuwe gebruiker"

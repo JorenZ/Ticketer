@@ -42,7 +42,7 @@ nl:
             topic:
               inclusion: is geen toegestaan onderwerp
               must_be_present: mag niet leeg zijn
-              must_be_included_in_list: moet voorkomen in de lijst
+              must_be_included_in_list: moet voorkomen in de lijst met toegestane onderwerpen
             user:
               assigned_user_role_must_be_programmer_or_administrator: toegewezen gebruiker moet programmeur of administrator zijn
 
