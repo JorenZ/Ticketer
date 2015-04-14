@@ -1,4 +1,4 @@
-<% provide( :title, "Edit ticket" ) %>
+<% provide( :title, t('edit_ticket', id: @ticket.id) ) %>
 
 <%= render :partial => "layouts/flash_messages" %>
 <%= render :partial => "layouts/errors", locals: { object: @ticket } %>

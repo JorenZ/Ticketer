@@ -1,5 +1,12 @@
 ---
 nl:
   helpers:
-    submit: "%{model} aanmaken"
-    update: "%{model} wijzigen"
+    submit:
+      create: "aanmaken"
+      update: "wijzigen"
+      user:
+        create: "gebruiker aanmaken"
+        update: "gebruiker wijzigen"
+      ticket:
+        create: "ticket aanmaken"
+        update: "ticket wijzigen"

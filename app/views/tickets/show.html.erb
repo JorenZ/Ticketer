@@ -1,4 +1,4 @@
-<% provide( :title, "Ticket" ) %>
+<% provide( :title, t('show_ticket', id: @ticket.id) ) %>
 
 <div>
   <%= render :partial => "layouts/flash_messages" %>

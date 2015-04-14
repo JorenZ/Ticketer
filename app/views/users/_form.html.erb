@@ -1,33 +1,27 @@
 <%= form_for( @user ) do |f| %>
-
   <div id="form">
     <div class="field_title"><%=t :name %></div>
-    <div class="field">
-      <%= f.text_field :name %>
-    </div>
+    <div class="field"><%= f.text_field :name %></div>
 
     <div class="field_title"><%=t :role %></div>
-    <div class="field">
-      <%= f.select :role, roles %>
-    </div>
+    <div class="field"><%= f.select :role, roles %></div>
     
     <div class="field_title"><%=t :email %></div>
-    <div class="field">
-      <%= f.text_field :email %>
-    </div>  
+    <div class="field"><%= f.text_field :email %></div>  
     
     <div class="field_title"><%=t :password %></div>
-    <div class="field">
-      <%= f.password_field :password %>
-    </div>  
+    <div class="field"><%= f.password_field :password %></div>  
     
     <div class="field_title"><%=t :password_again %></div>
-    <div class="field">
-      <%= f.password_field :password_confirmation %>
-    </div>  
+    <div class="field"><%= f.password_field :password_confirmation %></div>  
     
     <div style="margin-top: 5em; float: right">
-      <span><%= link_to t( :back ), users_path %> <%=t :or %> </span> <span class="actions"><%= f.submit %></span>
+      <div>
+          <%= link_to t( :back ), users_path %> 
+          <%=t :or %> 
+          &nbsp;
+          <span class="actions"><%= f.submit class: 'user' %></span>
+      </div>      
     </div>
   </div>
 <% end %>
