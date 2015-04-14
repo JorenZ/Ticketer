@@ -1,0 +1,46 @@
+---
+nl:
+  # Status options
+  closed: gesloten
+  open: open
+  removed: verwijderd
+
+  # Topic options
+  Callcenter: Afsprakenbureau
+  Finance: "Financiën"
+  Management: Management
+
+  # User role options
+  Administrator: administrator
+  Programmer: programmeur
+  User: gebruiker
+
+  assignment_status: toewijzing
+  assignment_status_options:
+    all: Alle
+    assigned: Toegewezen
+    unassigned: "Niet toegewezen"
+  assigned_programmer: "toegewezen programmeur"
+  assignment: toewijzing
+  body: omschrijving
+  close_ticket: Sluiten
+  create:
+    notice: Ticket aangemaakt
+  edit_ticket: Wijzigen
+  date: datum
+  number: nummer
+  remove_ticket: Verwijderen
+  reopen_ticket: Heropenen
+  status: status
+  status_options:
+    all: Alle
+    open: Open
+    closed: Gesloten
+    removed: Verwijderd
+  ticket_search: "zoek ticket"
+  ticket_text: "omschrijving:"
+  topic: onderwerp
+  topic_options:
+    callcenter: Afsprakenbureau
+    finance: "Financiën"
+    management: Management

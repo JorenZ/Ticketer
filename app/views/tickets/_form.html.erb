@@ -1,23 +1,23 @@
 <%= form_for(@ticket) do |f| %>
 
 <div id="form">
-  <div class="field_title">Topic</div>
+  <div class="field_title"><%=t :topic %>:</div>
   <div class="field">
     <%= f.select :topic, topic_options %>
   </div>
   
-  <div class="field_title">Ticket text</div>
+  <div class="field_title"><%=t :ticket_text %>:</div>
   <div class="field">
     <%= f.text_area :body, rows: 6 %>
   </div>
 
-  <div class="field_title">Assigned programmer:</div>
+  <div class="field_title"><%=t :assigned_programmer %>:</div>
   <div class="field">
     <%= f.select :user_id, user_options, { include_blank: true } %>
   </div>
 
   <div style="margin-top: 5em; float: right">
-    <span><%= link_to 'Back', tickets_path %></span> or <span class="actions"><%= f.submit %></span>
+    <div><%= link_to t( :back ), tickets_path %> <%=t :or %> <span class="actions"><%= f.submit %></span>
   </div>
 </div>
 

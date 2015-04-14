@@ -1,0 +1,20 @@
+nl:
+  back: "< terug"
+  error: foutmelding
+  or: of
+  page_loaded_on: Pagina geladen op
+  ticketer: Ticketer
+  tickets: Tickets
+  Tickets: Tickets # controller name translation
+  users: Gebruikers
+  Users: Gebruikers # controller name translation
+  will_paginate:
+      next_label: ">"
+      page_gap: "&hellip;"
+      previous_label: "<"
+      page_entries_info:
+          multi_page_html: "%{model} %{from}--%{to} van %{count}"
+          single_page_html:
+            zero: "Géén %{model} gevonden"
+            one: "Eén %{model} gevonden"
+            other: "Alle %{count} %{model}"

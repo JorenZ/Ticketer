@@ -46,7 +46,7 @@ class TicketsController < ApplicationController
  
     respond_to do |format|
       if @ticket.save
-        format.html { redirect_to @ticket, notice: 'Ticket created.' }
+        format.html { redirect_to @ticket, notice: t( :ticket_created ) }
       else
         format.html { render action: "new" }
       end
@@ -68,9 +68,9 @@ class TicketsController < ApplicationController
 
     respond_to do |format|
       if @event.nil? && @ticket.save
-        format.html { redirect_to @ticket, notice: "Ticket updated" }
+        format.html { redirect_to @ticket, notice: t( :ticket_updated ) }
       elsif @ticket.save
-        format.html { redirect_to @ticket, notice: "Ticket status updated" }
+        format.html { redirect_to @ticket, notice: t( :ticket_status_updated ) }
       else        
         format.html { render action: "edit" }
       end

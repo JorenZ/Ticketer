@@ -1,0 +1,5 @@
+---
+nl:
+  helpers:
+    submit: "%{model} aanmaken"
+    update: "%{model} wijzigen"

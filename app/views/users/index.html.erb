@@ -5,9 +5,9 @@
 <div class="table">
   <div class="thead">
     <div class="tr">
-        <div class="th small"><%= sort_link @search, :name  %></div>
-        <div class="th small"><%= sort_link @search, :role  %></div>
-        <div class="th small">Email</div>
+        <div class="th small"><%= sort_link @search, :name, t( :name )  %></div>
+        <div class="th small"><%= sort_link @search, :role, t( :role )  %></div>
+        <div class="th small"><%=t :email %></div>
     </div>
   </div>
   

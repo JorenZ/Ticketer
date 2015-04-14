@@ -2,13 +2,13 @@
   <div id="search">
     <span><%= f.hidden_field :s, :value => @current_sort.nil? ? nil : @current_sort %></span>
 
-    <span class="field_title">Ticket search:</span>
+    <span class="field_title"><%=t :ticket_search %>:</span>
     <span class="field"><%= f.search_field :body_or_user_name_cont %></span>
 
-    <span class="field_title">Status:</span>
+    <span class="field_title"><%=t :status %>:</span>
     <span class="field"><%= f.select :status_in, status_options, :selected => ( @current_status_filter if @current_status_filter ) %></span>
 
-    <span class="field_title">Assignment:</span>
+    <span class="field_title"><%=t :assignment %>:</span>
     <span class="field"><%= f.select :assignment_status_in, assignment_status_options, :selected => ( @current_assignment_status_filter if @current_assignment_status_filter ) %></span>
 
     <span class="action"><%= f.submit %></span>

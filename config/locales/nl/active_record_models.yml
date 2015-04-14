@@ -1,0 +1,16 @@
+---
+nl:
+  activemodel:
+    models: &models
+      error:
+        one: foutmelding
+        other: foutmeldingen
+      user: 
+        one: gebruiker
+        other: gebruikers
+      ticket:
+        one: ticket
+        other: tickets
+
+  activerecord:
+    <<: *models

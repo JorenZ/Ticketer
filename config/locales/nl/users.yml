@@ -1,0 +1,13 @@
+---
+nl:
+  edit_user: Wijzigen
+  email: Email
+  inactivate_user: Inactief maken
+  name: Naam
+  role: Rol
+  roles:
+    administrator: Administrator
+    programmer: Programmeur
+    user: Gebruiker  
+  password: Wachtwoord
+  password_again: Wachtwoord nogmaals
