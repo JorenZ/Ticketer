@@ -3,12 +3,15 @@ nl:
   activemodel:
     models: &models
       error:
+        zero: foutmeldingen
         one: foutmelding
         other: foutmeldingen
       user: 
+        zero: gebruikers
         one: gebruiker
         other: gebruikers
       ticket:
+        zero: tickets
         one: ticket
         other: tickets
 
