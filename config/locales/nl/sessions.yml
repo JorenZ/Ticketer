@@ -1,0 +1,5 @@
+---
+nl:
+  contact_if_no_account: "Neem contact op met %{contact_name} (%{contact_email}) als je nog geen account hebt."
+  login_succesful: "U bent nu ingelogd."
+  logout_succesful: "U bent nu uitgelogd."

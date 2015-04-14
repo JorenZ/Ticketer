@@ -1,8 +1,8 @@
 <% provide( :title, t('tickets') ) %>
 
-<%= render :partial => "layouts/flash_messages" %>
-
 <%= render :partial => "tickets/search" %>
+
+<%= render :partial => "layouts/flash_messages" %>
 
 <% if !@tickets.blank? %>
   <div class="table">

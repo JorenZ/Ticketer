@@ -1,21 +1,17 @@
 <%= form_for( :session, url: sessions_path ) do |f| %>
 
-<div id="form">
-  <div class="field_title">Email</div>
-  <div class="field">
-    <%= f.text_field :email %>
-  </div>  
+<div id="session_form">
+  <div class="field_title"><%=t :email %></div>
+  <div class="field"><%= f.text_field :email %></div>  
   
-  <div class="field_title">Password</div>
-  <div class="field">
-    <%= f.password_field :password %>
-  </div>  
+  <div class="field_title"><%=t :password %></div>
+  <div class="field"><%= f.password_field :password %></div>  
   
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
+  <div class="actions"><%= f.submit class: 'login' %></div>
 
-  <div>If you don't have an account, contact Joren at joren@studentaanhuis.nl.</div>
+  <div style="margin-top: 5em">
+    <div><%=t :contact_if_no_account, contact_name: 'Joren', contact_email: 'joren@studentaanhuis.nl' %></div>
+  </div>
 </div>
 
 <% end %>

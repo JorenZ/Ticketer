@@ -15,7 +15,7 @@
 			<span class="title"><%=t :ticketer %>  | <%=t controller_name.to_sym %></span>
 			<span class="login">
 				<% if logged_in? %>
-					Logged in as <%= current_user.name %>; <%= link_to "Log out", logout_path, method: "delete" %>
+					<%=t :logged_in_as, user_name: current_user.name %>; <%= link_to t( :log_out ), logout_path, method: "delete" %>
 				<% else %>
 					<%= link_to t( :log_in ), login_path %>
 				<% end %>

@@ -139,6 +139,7 @@ $max-width: 1020px;
     margin: 4em auto 1.5em;
 
     .will_paginate {
+        clear: both;
         color: rgba( 255, 255, 255, 0.25 );
         .previous_page, .previous, .current, .next, .next_page {
             &.disabled {
@@ -194,6 +195,24 @@ $max-width: 1020px;
 **************************/
 #form {
     text-align: left;
+    float: left;
+    width: 100%;
+    color: $base0;
+    display: inline-block;  
+    background-color: $base02;
+    &.field_title {
+        width: 100%;
+        clear: left;
+    }
+    &.field {
+        width: 100%;
+        margin-bottom: 50em;
+        float: right;
+    }
+}
+
+#session_form {
+    text-align: center;
     float: left;
     width: 100%;
     color: $base0;

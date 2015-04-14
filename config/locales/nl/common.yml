@@ -3,8 +3,10 @@ nl:
   error: foutmelding
   error_message_header_ticket: "Foutmeldingen bij dit ticket:"
   error_message_header_user: "Foutmeldingen bij deze gebruiker:"
+  inloggen: Inloggen
   or: of
   page_loaded_on: Pagina geladen op
+  sessions: Inloggen
   ticketer: Ticketer
   ticket: ticket
   tickets: Tickets
