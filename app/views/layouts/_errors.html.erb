@@ -1,6 +1,12 @@
 <% if object.errors.any? %>
   <div id="error_explanation">
-    <h2><%= t( :error_message_header, :count => object.errors.count ) %></h2>
+    <h2>
+      <% if object.is_a? User %>
+        <%=t :error_message_header_user %> 
+      <% elsif object.is_a? Ticket %>
+        <%=t :error_message_header_ticket %>
+      <% end %>        
+    </h2>
     <ul>
     <% object.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
