@@ -10,3 +10,5 @@ nl:
       ticket:
         create: "ticket aanmaken"
         update: "ticket wijzigen"
+      session:
+        submit: "log in"
