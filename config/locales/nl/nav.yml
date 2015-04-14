@@ -1,9 +1,7 @@
 ---
 nl:
-  layouts:
-    <<: *common
-    log_in: 'log in'
-    tickets: tickets
-    users: gebruikers
+    log_in: "log in"
+    tickets: "tickets"
+    users: "gebruikers"
     new_ticket: "nieuw ticket"
     new_user: "nieuwe gebruiker"

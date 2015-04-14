@@ -1,19 +1,19 @@
 module TicketsHelper
 
   def topic_options
-    [ t(:management), t(:finance), t(:callcenter) ]
+    I18n.t(:topic_options).map { |k,v| [ v, k ] }
   end
 
   def user_options
     users = User.where( "role IN ( 'Programmer', 'Administrator' )" )
-    options = users.collect { | u | ["#{u.name} (#{t( u.role.to_sym )})", u.id] } 
+    options = users.collect { | u | ["#{u.name} (#{t(u.role)})", u.id] } 
   end
 
   def status_options
-    [ t(:all), t(:open), t(:closed), t(:removed) ]
+    I18n.t(:status_options).map { |k, v| [ v, k ] }
   end
 
   def assignment_status_options 
-    [ t(:all), t(:assigned), t(:unassigned) ]
+    I18n.t(:assignment_status_options).map { |k, v| [ v, k ] }
   end
 end

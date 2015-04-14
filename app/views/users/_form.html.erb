@@ -21,13 +21,13 @@
       <%= f.password_field :password %>
     </div>  
     
-    <div class="field_title"><%=t :password_retype %></div>
+    <div class="field_title"><%=t :password_again %></div>
     <div class="field">
       <%= f.password_field :password_confirmation %>
     </div>  
     
     <div style="margin-top: 5em; float: right">
-      <span><%= link_to t( :back ), users_path %><%=t :or %></span> <span class="actions"><%= f.submit %></span>
+      <span><%= link_to t( :back ), users_path %> <%=t :or %> </span> <span class="actions"><%= f.submit %></span>
     </div>
   </div>
 <% end %>

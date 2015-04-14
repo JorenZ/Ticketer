@@ -1,7 +1,7 @@
 module UsersHelper
 
-def roles
-		[ t(:user), t(:programmer), t(:administrator) ]
-end
+  def roles
+  		I18n.t(:roles).map { |k, v| [ v, k ] }
+  end
 
 end

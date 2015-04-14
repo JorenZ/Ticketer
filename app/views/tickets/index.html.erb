@@ -25,10 +25,10 @@
                 <!-- <%# if ticket.status == 'removed' %><div class="td removed"><%# else %><div class="td"><%# end %>  -->
                 <div class="td"><%= ticket.id %></div>
                 <div class="td"><%= ticket.created_at.to_date %></div>
-                <div class="td"><%= ticket.status %></div>
+                <div class="td"><%=t ticket.status %></div>
                 <div class="td"><%= ticket.assignment_status %></div>
                 <div class="td"><%= render :partial => "tickets/ticket_users", :locals => { :ticket => ticket } %></div>
-                <div class="td"><%= ticket.topic %></div>
+                <div class="td"><%=t ticket.topic %></div>
                 <div class="td"><%= sanitize( ticket.body ) %></div>
             </a>
         <% end %>
