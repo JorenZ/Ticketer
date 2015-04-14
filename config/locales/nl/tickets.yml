@@ -20,7 +20,7 @@ nl:
     all: Alle
     assigned: Toegewezen
     unassigned: "Niet toegewezen"
-  assigned_programmer: "toegewezen programmeur"
+  assigned_programmer: programmeur
   assignment: toewijzing
   body: Omschrijving
   close_ticket_link: sluiten
