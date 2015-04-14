@@ -14,3 +14,14 @@ nl:
 
   activerecord:
     <<: *models
+    attributes:
+      ticket:
+        body: Omschrijving
+        topic: Onderwerp
+        assigned_programmer: "toegewezen programmeur"
+      user:
+        email: Emailadres
+        name: Naam
+        password: Wachtwoord
+        password_digest: Wachtwoord nogmaals
+        role: Rol

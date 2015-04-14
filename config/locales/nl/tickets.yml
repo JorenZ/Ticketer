@@ -22,7 +22,7 @@ nl:
     unassigned: "Niet toegewezen"
   assigned_programmer: "toegewezen programmeur"
   assignment: toewijzing
-  body: omschrijving
+  body: Omschrijving
   close_ticket_link: sluiten
   create:
     notice: Ticket aangemaakt
@@ -43,7 +43,7 @@ nl:
   ticket_status_updated: Ticketstatus geüpdatet
   ticket_text: omschrijving
   ticket_updated: Ticket geüpdatet
-  topic: onderwerp
+  topic: Onderwerp
   topic_options:
     callcenter: Afsprakenbureau
     finance: "Financiën"

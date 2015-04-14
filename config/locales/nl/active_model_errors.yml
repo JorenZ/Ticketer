@@ -27,9 +27,9 @@ nl:
             role:
               inclusion: is geen toegestane rol
             password: # NB: errors include the translation for 'password digest'
-              confirmation: nogmaals is niet gelijk aan wachtwoord
-              password_and_password_digest_must_be_present: en wachtwoord nogmaals moeten beide zijn ingevuld
-              password_and_password_digest_length_must_be_geq_8_chars: en wachtwoord nogmaals  moeten beide minimaal 8 karakters zijn
+              confirmation: is niet gelijk aan wachtwoord nogmaals
+              password_and_password_digest_must_be_present: moet tweemaal zijn ingevuld
+              password_and_password_digest_length_must_be_geq_8_chars: moet minimaal 8 karakters zijn
             password_digest:
               blank: mag niet leeg zijn
           one: Gebruiker
