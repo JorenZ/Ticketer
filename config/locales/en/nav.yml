@@ -1,5 +1,5 @@
 ---
-nl:
+en:
     logged_in_as: "Logged in as %{user_name}"
     log_in: "log in"
     log_out: "log out"

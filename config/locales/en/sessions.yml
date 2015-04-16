@@ -1,5 +1,5 @@
 ---
-nl:
+en:
   contact_if_no_account: "Please contact %{contact_name} (%{contact_email}) if you do not have an account yet."
   login_succesful: "You are now logged in."
   logout_succesful: "You are now logged out."

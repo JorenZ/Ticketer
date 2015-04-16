@@ -1,5 +1,5 @@
 ---
-nl:
+en:
   edit_user: "Edit user %{id}"
   edit_user_link: edit
   email: Email

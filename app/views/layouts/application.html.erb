@@ -19,8 +19,8 @@
 				<% else %>
 					<%= link_to t( :log_in ), login_path %>
 				<% end %>
-				| taal_link
 			</span>
+			<span class="languages"><%= render :partial => "layouts/languages" %></span>
 		</div><br/>
 		<div><%= render :partial => "layouts/nav" %></div>
 		<div><%= render :partial => "layouts/nav_env_#{ controller_name }" %></div>
