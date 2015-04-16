@@ -1,15 +1,15 @@
 ---
 nl:
-  edit_user: "Gebruiker %{id} wijzigen"
-  edit_user_link: wijzigen
+  edit_user: "Edit user %{id}"
+  edit_user_link: edit
   email: Email
-  inactivate_user_link: inactief maken
-  name: Naam
-  role: Rol
+  inactivate_user_link: inactivate
+  name: Name
+  role: Role
   roles:
     administrator: Administrator
-    programmer: Programmeur
-    user: Gebruiker  
-  password: Wachtwoord
-  password_again: Wachtwoord nogmaals
-  show_user: "Gebruiker %{id}"
+    programmer: Programmer
+    user: User
+  password: Password
+  password_again: Password again
+  show_user: "User %{id}"

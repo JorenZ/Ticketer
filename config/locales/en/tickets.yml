@@ -1,50 +1,50 @@
 ---
 nl:
   # Status options
-  closed: gesloten
+  closed: closed
   open: open
-  removed: verwijderd
+  removed: removed
 
   # Topic options
-  callcenter: afsprakenbureau
-  finance: "financiën"
+  callcenter: call center
+  finance: finance
   management: management
 
   # User role options
   Administrator: administrator
-  Programmer: programmeur
-  User: gebruiker
+  Programmer: programmer
+  User: user
 
-  assignment_status: toewijzing
+  assignment_status: assignment
   assignment_status_options:
-    all: Alle
-    assigned: Toegewezen
-    unassigned: "Niet toegewezen"
-  assigned_programmer: programmeur
-  assignment: toewijzing
-  body: Omschrijving
-  close_ticket_link: sluiten
+    all: All
+    assigned: Assigned
+    unassigned: Not assigned
+  assigned_programmer: programmer
+  assignment: assignment
+  body: Description
+  close_ticket_link: close
   create:
-    notice: Ticket aangemaakt
-  edit_ticket: "Ticket %{id} wijzigen"
-  edit_ticket_link: wijzigen
-  date: datum
-  number: nummer
-  remove_ticket_link: verwijderen
-  reopen_ticket_link: heropenen
+    notice: Ticket created
+  edit_ticket: "Edit ticket %{id}"
+  edit_ticket_link: edit
+  date: date
+  number: number
+  remove_ticket_link: remove
+  reopen_ticket_link: reopen
   show_ticket: "Ticket %{id}"
   status: status
   status_options:
-    all: Alle
+    all: All
     open: Open
-    closed: Gesloten
-    removed: Verwijderd
-  ticket_search: "zoek ticket"
-  ticket_status_updated: Ticketstatus geüpdatet
-  ticket_text: omschrijving
-  ticket_updated: Ticket geüpdatet
-  topic: Onderwerp
+    closed: Closed
+    removed: Removed
+  ticket_search: "find ticket"
+  ticket_status_updated: Ticket status updated
+  ticket_text: description
+  ticket_updated: Ticket updated
+  topic: Topic
   topic_options:
-    callcenter: Afsprakenbureau
-    finance: "Financiën"
+    callcenter: Call center
+    finance: Finance
     management: Management

@@ -2,13 +2,13 @@
 nl:
   helpers:
     submit:
-      create: "aanmaken"
-      update: "wijzigen"
+      create: "create"
+      update: "edit"
       user:
-        create: "gebruiker aanmaken"
-        update: "gebruiker wijzigen"
+        create: "create user"
+        update: "edit user"
       ticket:
-        create: "ticket aanmaken"
-        update: "ticket wijzigen"
+        create: "create ticket"
+        update: "edit ticket"
       session:
         submit: "log in"

@@ -3,13 +3,13 @@ nl:
   activemodel:
     models: &models
       error:
-        zero: foutmeldingen
-        one: foutmelding
-        other: foutmeldingen
+        zero: errors
+        one: error
+        other: errors
       user: 
-        zero: gebruikers
-        one: gebruiker
-        other: gebruikers
+        zero: users
+        one: user
+        other: users
       ticket:
         zero: tickets
         one: ticket
@@ -19,12 +19,12 @@ nl:
     <<: *models
     attributes:
       ticket:
-        body: Omschrijving
-        topic: Onderwerp
-        assigned_programmer: "toegewezen programmeur"
+        body: Description
+        topic: Topic
+        assigned_programmer: "Assigned programmer"
       user:
-        email: Emailadres
-        name: Naam
-        password: Wachtwoord
-        password_digest: Wachtwoord nogmaals
-        role: Rol
+        email: Email address
+        name: Name
+        password: Password
+        password_digest: Password again
+        role: Role
