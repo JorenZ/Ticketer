@@ -113,18 +113,15 @@ $max-width: 1020px;
         margin-right: 0.25em;
         text-align: left;
         border: 3px solid $base02;
-        border-radius: 10px;
+        border-radius: 10px 10px 0px 0px;
+
         background-color: $base02;
         &.current {
-            background-color: $base01;
-            border: 3px solid $base01;
+            border-bottom: 3px solid $base0;
         }   
         &.env {
             float: right;
-            &.current {
-                background-color: $base01;
-                border: 3px solid $base01;
-            }       
+            margin-right: 0em;
         }
         :first-child {
             clear: left;
@@ -136,7 +133,7 @@ $max-width: 1020px;
 	padding: 1em;
 	background: $base03;
     background-color: $base02;
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px;
     text-align: center;
     overflow: auto;
 
