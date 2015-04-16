@@ -11,7 +11,7 @@ module ApplicationHelper
 
   def nav_env_item(name, link, *alert)
     url = request.fullpath
-    klasses = ['nav env']
+    klasses = ['nav', 'env']
     link_to name, link, :class => klasses.join(' ')
   end
 

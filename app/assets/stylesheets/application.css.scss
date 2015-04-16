@@ -79,7 +79,7 @@ $max-width: 1020px;
     margin: 1.5em auto;
     .title {
         width: 50%;
-        height: 100px;
+        height: 80px;
         font-size: 2em;
         text-align: left;
         float: left;
@@ -98,7 +98,7 @@ $max-width: 1020px;
     }
     .languages {
         width: 50%;
-        height: 80px;
+        height: 60px;
         font-size: smaller;
         text-align: right;
         float: left;
@@ -113,18 +113,15 @@ $max-width: 1020px;
         margin-right: 0.25em;
         text-align: left;
         border: 3px solid $base02;
-        border-radius: 10px;
+        border-radius: 10px 10px 0px 0px;
+
         background-color: $base02;
         &.current {
-            background-color: $base01;
-            border: 3px solid $base01;
+            border-bottom: 3px solid $base0;
         }   
         &.env {
             float: right;
-            &.current {
-                background-color: $base01;
-                border: 3px solid $base01;
-            }       
+            margin-right: 0em;
         }
         :first-child {
             clear: left;
@@ -136,10 +133,11 @@ $max-width: 1020px;
 	padding: 1em;
 	background: $base03;
     background-color: $base02;
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px;
     text-align: center;
     overflow: auto;
 
+    clear: both;
     width: 100%;
     min-width: $min-width;
     max-width: $max-width;
@@ -220,19 +218,20 @@ $max-width: 1020px;
 }
 
 #session_form {
+    clear: both;
     text-align: center;
     float: left;
     width: 100%;
+    min-width: $min-width;
+    max-width: $max-width;
     color: $base0;
     display: inline-block;  
     background-color: $base02;
     &.field_title {
         width: 100%;
-        clear: left;
     }
     &.field {
         width: 100%;
-        margin-bottom: 50em;
         float: right;
     }
 }

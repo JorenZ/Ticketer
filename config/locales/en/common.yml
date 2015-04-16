@@ -3,7 +3,7 @@ en:
   error: error
   error_message_header_ticket: "Errors for this ticket:"
   error_message_header_user: "Errors for this user:"
-  inloggen: Log in
+  logging_in: Log in
   or: or
   page_loaded_on: Page loaded on
   sessions: Logging in
