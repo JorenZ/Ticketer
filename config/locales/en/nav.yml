@@ -1,0 +1,9 @@
+---
+en:
+    logged_in_as: "Logged in as %{user_name}"
+    log_in: "log in"
+    log_out: "log out"
+    tickets: Tickets
+    users: Users
+    new_ticket: "New ticket"
+    new_user: "New user"

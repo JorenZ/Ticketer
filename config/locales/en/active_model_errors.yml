@@ -1,0 +1,48 @@
+---
+en:
+  activerecord:
+    models:
+      body: text
+      email: email
+      name: name
+      password: password
+      password_digest: password again
+      role: role
+      ticket: ticket
+      topic: subject
+      user: user
+    errors:
+      error_message_header: 
+        one: "There was one error:"
+        other: "There were %{count} errors:"
+      models:
+        user: 
+          attributes:
+            email:
+              invalid_format: is invalid
+              must_be_present: cannot be blank
+            name:
+              must_be_present: cannot be blank
+              length_must_be_leq_50_chars: must be 50 characters maximum
+            role:
+              inclusion: is not an allowed role
+            password: # NB: errors include the translation for 'password digest'
+              confirmation: does not equal password
+              password_and_password_digest_must_be_present: must be entered two times
+              password_and_password_digest_length_must_be_geq_8_chars: must be 8 characters minimum
+            password_digest:
+              blank: cannot be blank
+          one: User
+          other: Users
+        ticket:
+          attributes:
+            body:
+              must_be_present: cannot be blank
+              blank: cannot be blank
+            topic:
+              inclusion: is not an allowed topic
+              must_be_present: cannot be blank
+              must_be_included_in_list: must be in the list of allowed topics
+            user:
+              assigned_user_role_must_be_programmer_or_administrator: assigned used must be a programmer or administrator
+

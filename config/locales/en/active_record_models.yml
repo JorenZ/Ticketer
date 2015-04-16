@@ -1,0 +1,30 @@
+---
+en:
+  activemodel:
+    models: &models
+      error:
+        zero: errors
+        one: error
+        other: errors
+      user: 
+        zero: users
+        one: user
+        other: users
+      ticket:
+        zero: tickets
+        one: ticket
+        other: tickets
+
+  activerecord:
+    <<: *models
+    attributes:
+      ticket:
+        body: Description
+        topic: Topic
+        assigned_programmer: "Assigned programmer"
+      user:
+        email: Email address
+        name: Name
+        password: Password
+        password_digest: Password again
+        role: Role

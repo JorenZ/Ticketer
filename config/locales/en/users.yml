@@ -1,0 +1,15 @@
+---
+en:
+  edit_user: "Edit user %{id}"
+  edit_user_link: edit
+  email: Email
+  inactivate_user_link: inactivate
+  name: Name
+  role: Role
+  roles:
+    administrator: Administrator
+    programmer: Programmer
+    user: User
+  password: Password
+  password_again: Password again
+  show_user: "User %{id}"

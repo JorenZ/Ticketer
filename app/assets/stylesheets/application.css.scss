@@ -77,11 +77,9 @@ $max-width: 1020px;
     height: 2.5em;
     font: "Humanist 777", sans-serif;
     margin: 1.5em auto;
-
-
     .title {
         width: 50%;
-        height: 50px;
+        height: 100px;
         font-size: 2em;
         text-align: left;
         float: left;
@@ -89,16 +87,26 @@ $max-width: 1020px;
     }
     .login {
         width: 50%;
-        height: 50px;
-        text-align: right;
+        height: 20px;
         font-size: smaller;
+        text-align: right;
         float: left;
         vertical-align: bottom;
         a {
             text-decoration: underline;  
         }
     }
-
+    .languages {
+        width: 50%;
+        height: 80px;
+        font-size: smaller;
+        text-align: right;
+        float: left;
+        vertical-align: bottom;
+        a {
+            text-decoration: underline;  
+        }
+    }
     .nav {
         float: left;
         padding: 0.5em 0.5em 0.5em 0.5em;

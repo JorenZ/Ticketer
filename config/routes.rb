@@ -1,7 +1,8 @@
 Ticketer::Application.routes.draw do
+  get '/:locale' => 'tickets#index'
   root :to => 'tickets#index'
 
-  scope "/:locale", locale: /en|nl/ do
+  scope "(:locale)", locale: /en|nl/ do
     resources :tickets do
       collection do
         match 'search' => 'tickets#search', as: :search
@@ -16,6 +17,5 @@ Ticketer::Application.routes.draw do
     get 'login' => 'sessions#new'
     delete 'logout' => 'sessions#destroy'
 
-    get '/:locale' => 'tickets#index'
   end
 end

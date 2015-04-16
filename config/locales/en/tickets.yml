@@ -1,0 +1,50 @@
+---
+en:
+  # Status options
+  closed: closed
+  open: open
+  removed: removed
+
+  # Topic options
+  callcenter: call center
+  finance: finance
+  management: management
+
+  # User role options
+  Administrator: administrator
+  Programmer: programmer
+  User: user
+
+  assignment_status: assignment
+  assignment_status_options:
+    all: All
+    assigned: Assigned
+    unassigned: Not assigned
+  assigned_programmer: programmer
+  assignment: assignment
+  body: Description
+  close_ticket_link: close
+  create:
+    notice: Ticket created
+  edit_ticket: "Edit ticket %{id}"
+  edit_ticket_link: edit
+  date: date
+  number: number
+  remove_ticket_link: remove
+  reopen_ticket_link: reopen
+  show_ticket: "Ticket %{id}"
+  status: status
+  status_options:
+    all: All
+    open: Open
+    closed: Closed
+    removed: Removed
+  ticket_search: "find ticket"
+  ticket_status_updated: Ticket status updated
+  ticket_text: description
+  ticket_updated: Ticket updated
+  topic: Topic
+  topic_options:
+    callcenter: Call center
+    finance: Finance
+    management: Management

@@ -1,0 +1,14 @@
+---
+en:
+  helpers:
+    submit:
+      create: "create"
+      update: "edit"
+      user:
+        create: "create user"
+        update: "edit user"
+      ticket:
+        create: "create ticket"
+        update: "edit ticket"
+      session:
+        submit: "log in"

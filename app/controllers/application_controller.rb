@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  before_filter :set_locale
+
   protect_from_forgery with: :exception
 
   include SessionsHelper
@@ -9,5 +11,8 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale }.merge options
   end
 
+  def set_locale
+    I18n.locale = params[ :locale ] || I18n.default_locale
+  end
   
 end
