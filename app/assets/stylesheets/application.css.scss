@@ -140,6 +140,7 @@ $max-width: 1020px;
     text-align: center;
     overflow: auto;
 
+    clear: both;
     width: 100%;
     min-width: $min-width;
     max-width: $max-width;
@@ -231,11 +232,9 @@ $max-width: 1020px;
     background-color: $base02;
     &.field_title {
         width: 100%;
-        clear: left;
     }
     &.field {
         width: 100%;
-        margin-bottom: 50em;
         float: right;
     }
 }
