@@ -1,0 +1,30 @@
+---
+nl:
+  activemodel:
+    models: &models
+      error:
+        zero: foutmeldingen
+        one: foutmelding
+        other: foutmeldingen
+      user: 
+        zero: gebruikers
+        one: gebruiker
+        other: gebruikers
+      ticket:
+        zero: tickets
+        one: ticket
+        other: tickets
+
+  activerecord:
+    <<: *models
+    attributes:
+      ticket:
+        body: Omschrijving
+        topic: Onderwerp
+        assigned_programmer: "toegewezen programmeur"
+      user:
+        email: Emailadres
+        name: Naam
+        password: Wachtwoord
+        password_digest: Wachtwoord nogmaals
+        role: Rol

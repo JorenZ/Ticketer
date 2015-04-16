@@ -1,0 +1,9 @@
+---
+nl:
+    logged_in_as: "Ingelogd als %{user_name}"
+    log_in: "log in"
+    log_out: "log uit"
+    tickets: Tickets
+    users: Gebruikers
+    new_ticket: "Nieuw ticket"
+    new_user: "Nieuwe gebruiker"

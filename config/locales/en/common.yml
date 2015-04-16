@@ -1,0 +1,24 @@
+nl:
+  back: "< terug"
+  error: foutmelding
+  error_message_header_ticket: "Foutmeldingen bij dit ticket:"
+  error_message_header_user: "Foutmeldingen bij deze gebruiker:"
+  inloggen: Inloggen
+  or: of
+  page_loaded_on: Pagina geladen op
+  sessions: Inloggen
+  ticketer: Ticketer
+  ticket: ticket
+  tickets: Tickets
+  user: gebruiker
+  users: Gebruikers
+  will_paginate:
+      next_label: ">"
+      page_gap: "&hellip;"
+      previous_label: "<"
+      page_entries_info:
+          multi_page_html: "%{model} %{from}--%{to} van %{count}"
+          single_page_html:
+            zero: "Géén %{model} gevonden"
+            one: "Eén %{model} gevonden"
+            other: "Alle %{count} %{model}"

@@ -1,0 +1,14 @@
+---
+nl:
+  helpers:
+    submit:
+      create: "aanmaken"
+      update: "wijzigen"
+      user:
+        create: "gebruiker aanmaken"
+        update: "gebruiker wijzigen"
+      ticket:
+        create: "ticket aanmaken"
+        update: "ticket wijzigen"
+      session:
+        submit: "log in"

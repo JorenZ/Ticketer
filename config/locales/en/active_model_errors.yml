@@ -1,0 +1,48 @@
+---
+nl:
+  activerecord:
+    models:
+      body: tekst
+      email: email
+      name: naam
+      password: wachtwoord
+      password_digest: wachtwoord nogmaals
+      role: rol
+      ticket: ticket
+      topic: onderwerp
+      user: gebruiker
+    errors:
+      error_message_header: 
+        one: "Er was één foutmelding:"
+        other: "Er waren %{count} foutmeldingen:"
+      models:
+        user: 
+          attributes:
+            email:
+              invalid_format: is ongeldig
+              must_be_present: mag niet leeg zijn
+            name:
+              must_be_present: mag niet leeg zijn
+              length_must_be_leq_50_chars: mag maximaal 50 karakters zijn
+            role:
+              inclusion: is geen toegestane rol
+            password: # NB: errors include the translation for 'password digest'
+              confirmation: is niet gelijk aan wachtwoord nogmaals
+              password_and_password_digest_must_be_present: moet tweemaal zijn ingevuld
+              password_and_password_digest_length_must_be_geq_8_chars: moet minimaal 8 karakters zijn
+            password_digest:
+              blank: mag niet leeg zijn
+          one: Gebruiker
+          other: Gebruikers
+        ticket:
+          attributes:
+            body:
+              must_be_present: mag niet leeg zijn
+              blank: mag niet leeg zijn
+            topic:
+              inclusion: is geen toegestaan onderwerp
+              must_be_present: mag niet leeg zijn
+              must_be_included_in_list: moet voorkomen in de lijst met toegestane onderwerpen
+            user:
+              assigned_user_role_must_be_programmer_or_administrator: toegewezen gebruiker moet programmeur of administrator zijn
+
