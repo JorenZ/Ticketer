@@ -6,6 +6,7 @@ nl:
   logging_in: Inloggen
   or: of
   page_loaded_on: Pagina geladen op
+  please_log_in_first: Voor deze actie moet u eerst inloggen.
   sessions: Inloggen
   ticketer: Ticketer
   ticket: ticket

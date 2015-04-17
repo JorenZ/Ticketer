@@ -13,3 +13,5 @@ en:
   password: Password
   password_again: Password again
   show_user: "User %{id}"
+  user_created: User created
+  user_updated: User updated

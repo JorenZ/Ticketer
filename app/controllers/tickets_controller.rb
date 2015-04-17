@@ -1,4 +1,5 @@
 class TicketsController < ApplicationController
+  before_filter :logged_in_user, only: [ :edit, :update ]
 
   def index  
     @current_query = params[:q]
@@ -83,4 +84,10 @@ class TicketsController < ApplicationController
     params.require( :ticket ).permit( :body, :topic, :user_id, :status, :assignment_status )
   end
 
+  def logged_in_user
+    unless logged_in?
+      flash[ :notice ] = t( :please_log_in_first )
+      redirect_to login_path
+    end
+  end
 end

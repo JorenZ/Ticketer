@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :logged_in_user, only: [ :edit, :update ]
 
   def index
     @search = User.ransack( params[:q] )  
@@ -22,7 +23,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User created' }
+        format.html { redirect_to @user, notice: t( :user_created ) }
       else
         format.html { render action: "new" }
       end
@@ -34,7 +35,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User updated' }
+        format.html { redirect_to @user, notice: t( :user_updated ) }
       else
         format.html { render action: "edit" }
       end
@@ -56,4 +57,10 @@ class UsersController < ApplicationController
     params.require( :user ).permit( :name, :role, :email, :password, :password_confirmation )
   end
 
+  def logged_in_user
+    unless logged_in?
+      flash[ :notice ] = t( :please_log_in_first )
+      redirect_to login_path
+    end
+  end
 end

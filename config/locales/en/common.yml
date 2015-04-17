@@ -6,6 +6,7 @@ en:
   logging_in: Log in
   or: or
   page_loaded_on: Page loaded on
+  please_log_in_first: Please log in first before this action.
   sessions: Logging in
   ticketer: Ticketer
   ticket: ticket

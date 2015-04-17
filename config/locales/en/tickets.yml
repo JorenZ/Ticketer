@@ -39,6 +39,7 @@ en:
     open: Open
     closed: Closed
     removed: Removed
+  ticket_created: Ticket created
   ticket_search: "find ticket"
   ticket_status_updated: Ticket status updated
   ticket_text: description
