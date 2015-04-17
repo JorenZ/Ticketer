@@ -1,4 +1,6 @@
 <div class="ticket actions">
+
+  <!-- admins and programmers can edit all tickets -->
   <% if current_user && [ 'Administrator', 'Programmer' ].include?( current_user.role ) %>
     <% if @ticket.open? %>
         <span><%= link_to t( :edit_ticket_link ), edit_ticket_path %>
@@ -12,11 +14,14 @@
         <span><%= link_to t( :edit_ticket_link ), edit_ticket_path %></span>
       | <span><%= link_to t( :reopen_ticket_link ), ticket_path( :event => :reopen ), method: :put %></span>
     <% end %>
-  <% elsif current_user && @ticket.creator_id = current_user.id %>
+
+  <!-- ticket creators can open and close their own tickets -->
+  <% elsif current_user && @ticket.creator_id == current_user.id %>
     <% if @ticket.open? %>
       <span><%= link_to t( :close_ticket_link ), ticket_path( :event => :close ), method: :put %></span>
     <% elsif @ticket.closed? %>
       <span><%= link_to t( :reopen_ticket_link ), ticket_path( :event => :reopen ), method: :put %></span>
     <% end %>  
+  
   <% end %>
 </div>
