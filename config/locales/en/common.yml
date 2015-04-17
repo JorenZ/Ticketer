@@ -3,6 +3,7 @@ en:
   error: error
   error_message_header_ticket: "Errors for this ticket:"
   error_message_header_user: "Errors for this user:"
+  invalid_email_password_combination: "This combination of email address and password is not correct."
   logging_in: Log in
   or: or
   page_loaded_on: Page loaded on

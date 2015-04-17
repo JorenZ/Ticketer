@@ -3,6 +3,7 @@ nl:
   error: foutmelding
   error_message_header_ticket: "Foutmeldingen bij dit ticket:"
   error_message_header_user: "Foutmeldingen bij deze gebruiker:"
+  invalid_email_password_combination: "Deze combinatie van emailadres en wachtwoord is niet correct."
   logging_in: Inloggen
   or: of
   page_loaded_on: Pagina geladen op
