@@ -1,5 +1,5 @@
 class TicketsController < ApplicationController
-  before_filter :logged_in_user, only: [ :edit, :update ]
+  before_filter :logged_in_user
 
   def index  
     @current_query = params[:q]
@@ -81,7 +81,7 @@ class TicketsController < ApplicationController
   private
 
   def ticket_params
-    params.require( :ticket ).permit( :body, :topic, :user_id, :status, :assignment_status )
+    params.require( :ticket ).permit( :body, :topic, :user_id, :status, :assignment_status, :creator_id )
   end
 
   def logged_in_user

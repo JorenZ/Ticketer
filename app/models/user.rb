@@ -11,7 +11,8 @@ class User < ActiveRecord::Base
   validates :password, with: :password_check
   has_secure_password
 
-  has_many :tickets
+  has_many :tickets, :foreign_key => 'user_id' # tickets that the user is assigned to
+  has_many :tickets, :foreign_key => 'creator_id' # tickets that the user created
 
   def translated_role
     I18n.t( role, :scope => :roles )

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :logged_in_user, only: [ :edit, :update ]
+  before_filter :logged_in_user
 
   def index
     @search = User.ransack( params[:q] )  

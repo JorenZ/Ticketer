@@ -1,13 +1,14 @@
 class Ticket < ActiveRecord::Base
   before_save { validate_user_role }
   after_save { update_assignment_status }
-  attr_accessible :body, :status, :topic, :user_id, :assignment_status
+  attr_accessible :body, :status, :topic, :user_id, :assignment_status, :creator_id
 
   # validates :topic, with: :topic_check
   # validates :body, with: :body_check
   # validate :validate_user_role
 
   belongs_to :user
+  belongs_to :creator, :class_name => 'User', :foreign_key => 'creator_id'
 
   scope :status, lambda { |status| where("tickets.status = ?", status) if status.present? }
   scope :assignment_status, lambda { |asst| where("tickets.assignment_status = ?", asst) if asst.present? }
