@@ -3,9 +3,9 @@
 <% end %>
 
 <% if logged_in? && [ 'administrator', 'programmer' ].include?( current_user.role ) %>
-<%= nav_item t( :users ), users_path, ['/users'] %>
+<%= nav_item t( :users ), users_path, ['/users$'] %>
 <% end %>
 
 <% if logged_in? %>
-<%= nav_item t( :my_profile ), user_path( current_user.id ), ['/users/\d'] %>
+<%= nav_item t( :my_profile ), user_path( current_user.id ), ['/users/\d+'] %>
 <% end %>
