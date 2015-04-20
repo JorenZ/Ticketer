@@ -18,7 +18,7 @@ Ticket.create(
 
 User.create(
   name: 'Joren',
-  role: 'Administrator',
+  role: 'administrator',
   email: 'joren@studentaanhuis.nl',
   password: 'passwordone',
   password_confirmation: 'passwordone',
@@ -27,7 +27,7 @@ User.create(
 
 User.create(
   name: 'Programmerdude',
-  role: 'Programmer',
+  role: 'programmer',
   email: 'programmer@studentaanhuis.nl',
   password: 'passwordone',
   password_confirmation: 'passwordone',

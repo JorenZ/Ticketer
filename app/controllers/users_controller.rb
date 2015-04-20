@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   end
 
   def logged_in_user
-    if logged_in? && [ 'Administrator', 'Programmer' ].include?( current_user.role )
+    if logged_in? && [ 'administrator', 'programmer' ].include?( current_user.role )
       true
     elsif logged_in? && requested_url_is_users_own_profile
       true
