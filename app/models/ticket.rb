@@ -69,7 +69,7 @@ end
 def validate_user_role
   if self.user.nil?
     return true
-  elsif [ 'Programmer', 'Administrator' ].include?(self.user.role)
+  elsif [ 'programmer', 'administrator' ].include?(self.user.role)
     return true
   else
     self.errors.add( :user, :assigned_user_role_must_be_programmer_or_administrator )

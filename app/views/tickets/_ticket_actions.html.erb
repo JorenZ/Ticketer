@@ -1,7 +1,7 @@
 <div class="ticket actions">
 
   <!-- admins and programmers can edit all tickets -->
-  <% if current_user && [ 'Administrator', 'Programmer' ].include?( current_user.role ) %>
+  <% if current_user && [ 'administrator', 'programmer' ].include?( current_user.role ) %>
     <% if @ticket.open? %>
         <span><%= link_to t( :edit_ticket_link ), edit_ticket_path %>
       | <span><%= link_to t( :close_ticket_link ), ticket_path( :event => :close ), method: :put %></span>
