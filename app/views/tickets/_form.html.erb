@@ -17,5 +17,8 @@
           <span class="actions"><%= f.submit class: 'ticket' %></span>
       </div>
     </div>
+
+    <!-- safe since a logged-in user is required for the create action -->
+    <%= f.hidden_field :creator_id, :value => current_user.id %>
   </div>
 <% end %>

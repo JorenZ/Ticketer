@@ -5,7 +5,7 @@ module TicketsHelper
   end
 
   def user_options
-    users = User.where( "role IN ( 'Programmer', 'Administrator' )" )
+    users = User.where( "role IN ( 'programmer', 'administrator' )" )
     options = users.collect { | u | ["#{u.name} (#{t(u.role)})", u.id] } 
   end
 

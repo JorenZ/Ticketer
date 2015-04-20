@@ -1,8 +1,11 @@
 <!-- Careful: these items are showing from right to left in the application (float right) -->
-<% if ['^/users/new'].any? { |p| request.fullpath =~ Regexp.new(p) } %>
-  <%= nav_env_item t( :back ), users_path %>
-<% else %>
-  <%= nav_env_item t( :new_user ), new_user_path %>
+<% if logged_in? && [ 'administrator', 'programmer' ].include?( current_user.role ) %>
+  <% if request.fullpath =~ Regexp.new(/\/users\/\d+/) %>
+    <!-- no action: creating a new user is not done via your own profile! -->
+  <% elsif request.fullpath =~ Regexp.new(/\/users\/new/) %>
+    <%= nav_env_item t( :back ), users_path %>
+  <% else %>
+    <%= nav_env_item t( :new_user ), new_user_path %>
+  <% end %>
 <% end %>
-
 

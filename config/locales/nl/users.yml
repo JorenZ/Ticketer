@@ -13,3 +13,5 @@ nl:
   password: Wachtwoord
   password_again: Wachtwoord nogmaals
   show_user: "Gebruiker %{id}"
+  user_created: Gebruiker aangemaakt
+  user_updated: Gebruiker geüpdated

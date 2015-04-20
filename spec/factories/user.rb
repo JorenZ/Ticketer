@@ -3,7 +3,7 @@ FactoryGirl.define do
 
   factory :user do
     name "FactoryName#{ Date.current }"
-    role 'Programmer'
+    role 'programmer'
     email 'factory@example.com'
     password 'passwordone'
     password_confirmation 'passwordone'
@@ -11,15 +11,15 @@ FactoryGirl.define do
   end
 
   trait :admin do
-    role 'Administrator'
+    role 'administrator'
   end
 
   trait :programmer do
-    role 'Programmer'
+    role 'programmer'
   end
   
   trait :user do
-    role 'User'
+    role 'user'
   end
 
 end

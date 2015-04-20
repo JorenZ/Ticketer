@@ -39,6 +39,7 @@ nl:
     open: Open
     closed: Gesloten
     removed: Verwijderd
+  ticket_created: Ticket aangemaakt
   ticket_search: "zoek ticket"
   ticket_status_updated: Ticketstatus geüpdatet
   ticket_text: omschrijving
