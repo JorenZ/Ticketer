@@ -1,21 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 Ticket.delete_all
 
-Ticket.create(
-	topic: 'Management',
-	body: 'Seed-ticket #1')
+# identical to /scripts/create_many_tickets.rb
+for i in 1..7 do
+  Ticket.create( topic: "callcenter", body: "Automatically created ticket #{i}" )
+  Ticket.create( topic: "finance", body: "Automatically created ticket #{i}" )
+  Ticket.create( topic: "management", body: "Automatically created ticket #{i}" )
+end
 
-Ticket.create(
-	topic: 'Callcenter',
-	body: 'Seed-ticket number two...')
-
+User.delete_all
 User.create(
   name: 'Joren',
   role: 'administrator',
@@ -24,7 +16,6 @@ User.create(
   password_confirmation: 'passwordone',
   password_digest: '$2a$10$ibV9itmyBdNik93gRIlIRO9HVeM0fdwTNKylv4fOwrpVYKD6RN7Z2' # actual digest for 'passwordone'
   )
-
 User.create(
   name: 'Programmerdude',
   role: 'programmer',

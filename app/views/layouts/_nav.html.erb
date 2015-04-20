@@ -2,7 +2,7 @@
 <%= nav_item t( :tickets ), tickets_path, ['/tickets'] %>
 <% end %>
 
-<% if logged_in? && [ 'Administrator', 'Programmer' ].include?( current_user.role ) %>
+<% if logged_in? && [ 'administrator', 'programmer' ].include?( current_user.role ) %>
 <%= nav_item t( :users ), users_path, ['/users'] %>
 <% end %>
 
