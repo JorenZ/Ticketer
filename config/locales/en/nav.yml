@@ -1,9 +1,11 @@
 ---
 en:
     logged_in_as: "Logged in as %{user_name}"
-    log_in: "log in"
-    log_out: "log out"
+    log_in: log in
+    log_out: log out
+    my_profile: My profile
+    new_ticket: New ticket
+    new_user: New user
+    sessions: Login
     tickets: Tickets
     users: Users
-    new_ticket: "New ticket"
-    new_user: "New user"

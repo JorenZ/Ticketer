@@ -1,9 +1,11 @@
 ---
 nl:
     logged_in_as: "Ingelogd als %{user_name}"
-    log_in: "log in"
-    log_out: "log uit"
+    log_in: log in
+    log_out: log uit
+    my_profile: Mijn profiel
+    new_ticket: Nieuw ticket
+    new_user: Nieuwe gebruiker
+    sessions: Inloggen
     tickets: Tickets
     users: Gebruikers
-    new_ticket: "Nieuw ticket"
-    new_user: "Nieuwe gebruiker"

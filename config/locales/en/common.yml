@@ -3,17 +3,15 @@ en:
   error: error
   error_message_header_ticket: "Errors for this ticket:"
   error_message_header_user: "Errors for this user:"
+  insufficient_permissions_login_as_administrator_or_programmer: "Your user account does not have enough permissions to view all users."
   invalid_email_password_combination: "This combination of email address and password is not correct."
   logging_in: Log in
   or: or
   page_loaded_on: Page loaded on
   please_log_in_first: Please log in first before this action.
-  sessions: Logging in
   ticketer: Ticketer
   ticket: ticket
-  tickets: Tickets
   user: user
-  users: Users
   will_paginate:
       next_label: ">"
       page_gap: "&hellip;"

@@ -58,9 +58,21 @@ class UsersController < ApplicationController
   end
 
   def logged_in_user
-    unless logged_in?
+    if logged_in? && [ 'Administrator', 'Programmer' ].include?( current_user.role )
+      true
+    elsif logged_in? && requested_url_is_users_own_profile
+      true
+    elsif logged_in?
+      flash[ :notice ] = t( :insufficient_permissions_login_as_administrator_or_programmer )
+      redirect_to tickets_path
+    else
       flash[ :notice ] = t( :please_log_in_first )
       redirect_to login_path
     end
+  end
+
+  def requested_url_is_users_own_profile
+    profile = Regexp.new(/users\/#{current_user.id}/)
+    request.url =~ profile
   end
 end

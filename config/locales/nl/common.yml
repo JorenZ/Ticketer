@@ -3,17 +3,15 @@ nl:
   error: foutmelding
   error_message_header_ticket: "Foutmeldingen bij dit ticket:"
   error_message_header_user: "Foutmeldingen bij deze gebruiker:"
+  insufficient_permissions_login_as_administrator_or_programmer: "Uw gebruikersaccount heeft niet de juiste rechten om alle gebruikers in te zien."
   invalid_email_password_combination: "Deze combinatie van emailadres en wachtwoord is niet correct."
   logging_in: Inloggen
   or: of
   page_loaded_on: Pagina geladen op
   please_log_in_first: Voor deze actie moet u eerst inloggen.
-  sessions: Inloggen
   ticketer: Ticketer
   ticket: ticket
-  tickets: Tickets
   user: gebruiker
-  users: Gebruikers
   will_paginate:
       next_label: ">"
       page_gap: "&hellip;"
