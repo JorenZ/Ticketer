@@ -1,5 +1,6 @@
 ---
 nl:
+  administrator: Administrator
   edit_user: "Gebruiker %{id} wijzigen"
   edit_user_link: wijzigen
   email: Email
@@ -12,6 +13,8 @@ nl:
     user: Gebruiker  
   password: Wachtwoord
   password_again: Wachtwoord nogmaals
+  programmer: Programmeur
   show_user: "Gebruiker %{id}"
+  user: Gebruiker  
   user_created: Gebruiker aangemaakt
   user_updated: Gebruiker geüpdated

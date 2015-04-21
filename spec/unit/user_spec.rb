@@ -24,13 +24,13 @@ describe User do
   end
 
   it "should have a role from the allowed roles" do # see model for allowed roles
-    @user1.role = "Programmer" # case-sensitive
-    assert @user1.valid?, "'Programmer' (case-sensitive) should be an allowed role"
-    @user1.role = "Administrator" # case-sensitive
-    assert @user1.valid?, "'Administrator' (case-sensitive) should be an allowed role"
-    @user1.role = "User" # case-sensitive
-    assert @user1.valid?, "'User' (case-sensitive) should be an allowed role"
-    @user1.role = "Nonsenserole"
+    @user1.role = "programmer" # case-sensitive
+    assert @user1.valid?, "'programmer' (case-sensitive) should be an allowed role"
+    @user1.role = "administrator" # case-sensitive
+    assert @user1.valid?, "'administrator' (case-sensitive) should be an allowed role"
+    @user1.role = "user" # case-sensitive
+    assert @user1.valid?, "'user' (case-sensitive) should be an allowed role"
+    @user1.role = "nonsenserole"
     assert !@user1.valid?, 'Invalid roles should not be accepted'
   end
 

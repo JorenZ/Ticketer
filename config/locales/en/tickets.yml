@@ -11,10 +11,11 @@ en:
   management: management
 
   # User role options
-  Administrator: administrator
-  Programmer: programmer
-  User: user
+  administrator: administrator
+  programmer: programmer
+  user: user
 
+  assigned: Assigned
   assignment_status: assignment
   assignment_status_options:
     all: All
@@ -49,3 +50,4 @@ en:
     callcenter: Call center
     finance: Finance
     management: Management
+  unassigned: Not assigned

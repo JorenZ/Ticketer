@@ -6,7 +6,7 @@
     | <span><%= link_to t( :inactivate_user_link ), @user, :method => :remove %></span>
 
   <!-- admins can edit any user -->
-  <% elsif current_user && current_user.role == 'Administrator' %> 
+  <% elsif current_user && current_user.role == 'administrator' %> 
     <span><%= link_to t( :edit_user_link ), edit_user_path  %></span>
     | <span><%= link_to t( :inactivate_user_link ), @user, :method => :remove %></span>
 

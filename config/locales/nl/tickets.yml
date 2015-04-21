@@ -11,10 +11,11 @@ nl:
   management: management
 
   # User role options
-  Administrator: administrator
-  Programmer: programmeur
-  User: gebruiker
+  administrator: administrator
+  programmer: programmeur
+  user: gebruiker
 
+  assigned: Toegewezen
   assignment_status: toewijzing
   assignment_status_options:
     all: Alle
@@ -49,3 +50,4 @@ nl:
     callcenter: Afsprakenbureau
     finance: "Financiën"
     management: Management
+  unassigned: "Niet toegewezen"
