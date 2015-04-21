@@ -32,9 +32,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'will_paginate', '~> 3.0'
 
 # Strong parameters to allow private method x_params with 
-# 	X.create( x_params ) 
-# instead of 
-# 	X.new( :x )
 gem 'strong_parameters'
 
 group :development, :test do
@@ -48,5 +45,4 @@ end
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
-
 end

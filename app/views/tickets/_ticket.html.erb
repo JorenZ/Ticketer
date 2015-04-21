@@ -11,12 +11,12 @@
 
   <div>
     <span class="data header"><b><%=t :status %>:</b></span>
-    <span class="data"><%= @ticket.status %></span>
+    <span class="data"><%=t @ticket.status %></span>
   </div>
 
   <div>
     <span class="data header"><b><%=t :assignment_status %>:</b></span>
-    <span class="data"><%= @ticket.assignment_status %></span>
+    <span class="data"><%=t @ticket.assignment_status %></span>
   </div>
 
   <% if !@ticket.user_id.blank? %>
